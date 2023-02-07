@@ -1,7 +1,10 @@
 import { Header, Logo, Links, Login } from "../../styles/layout/navbar";
 import { ShoppingCart, Storefront } from "phosphor-react";
+import { useModal } from "../../hooks/layout/useModal";
 
 const Navbar = () => {
+  const { onOpen } = useModal();
+
   return (
     <Header>
       <Logo>
@@ -14,7 +17,7 @@ const Navbar = () => {
         <a href="#">Fale conosco</a>
       </Links>
       <Login>
-        <button>Login</button>
+        <button onClick={() => onOpen}>Login</button>
         <ShoppingCart size={30} />
       </Login>
     </Header>
