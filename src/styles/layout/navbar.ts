@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
 export const Header = styled.header`
+  position: fixed;
+  top: 0;
   background-color: #444;
   height: 10vh;
+  width: 100vw;
+  z-index: 1000;
   display: flex;
   align-items: center;
   padding: 1rem;
