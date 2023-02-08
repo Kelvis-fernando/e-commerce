@@ -4,6 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
+import Products from "./pages/Products";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/products",
-    element: <App />,
+    element: <Products />,
     errorElement: <ErrorPage />,
   },
   {
