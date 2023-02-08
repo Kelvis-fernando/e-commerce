@@ -13,8 +13,9 @@ const Products = () => {
       <Navbar />
       <ProductsContainer>
         {products &&
-          products?.map((product: ProductCardProps) => (
+          products?.map((product: ProductCardProps, index) => (
             <ProductCard
+              key={index}
               id={product?.id}
               title={product?.title}
               price={product?.price}

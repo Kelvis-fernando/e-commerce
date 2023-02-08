@@ -1,3 +1,5 @@
+import { productService } from "../../services/productsService";
+
 const useProducts = () => {
   const products = [
     {
@@ -225,6 +227,8 @@ const useProducts = () => {
       price: "150",
     },
   ];
+
+  // productService();
 
   return { products };
 };
