@@ -9,8 +9,10 @@ const Navbar = () => {
   return (
     <Header>
       <Logo>
-        <Coffee size={30} />
-        <h1>Coffee express</h1>
+        <Link to="/home">
+          <Coffee size={30} />
+          <h1>Coffee Delivery</h1>
+        </Link>
       </Logo>
       <Links>
         <Link to="/home">Home</Link>

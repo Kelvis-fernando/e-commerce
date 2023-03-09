@@ -22,6 +22,13 @@ export const Logo = styled.div`
     font-size: 1.5rem;
     padding-left: 0.3rem;
   }
+
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+  }
 `;
 
 export const Links = styled.div`
