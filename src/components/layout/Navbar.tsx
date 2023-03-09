@@ -1,5 +1,5 @@
 import { Header, Logo, Links, Login } from "../../styles/layout/navbar";
-import { ShoppingCart, Storefront } from "phosphor-react";
+import { ShoppingCart, Coffee } from "phosphor-react";
 import { useModal } from "../../hooks/layout/useModal";
 import { NavLink } from "react-router-dom";
 
@@ -9,8 +9,8 @@ const Navbar = () => {
   return (
     <Header>
       <Logo>
-        <Storefront size={30} color="#4fdc7c" />
-        <h1>E-com</h1>
+        <Coffee size={30} />
+        <h1>Coffee express</h1>
       </Logo>
       <Links>
         <NavLink to="products">Produtos</NavLink>

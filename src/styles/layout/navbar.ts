@@ -1,27 +1,26 @@
 import styled from "styled-components";
 
 export const Header = styled.header`
-  position: fixed;
-  top: 0;
-  background-color: #444;
+  background-color: #033b3d;
   height: 10vh;
   width: 100vw;
-  z-index: 1000;
   display: flex;
   align-items: center;
-  padding: 1rem;
   color: #fff;
   justify-content: space-around;
+  align-items: center;
 `;
 
 export const Logo = styled.div`
   display: flex;
   cursor: pointer;
+  align-items: center;
 
   h1 {
     color: #fff;
     font-weight: bold;
     font-size: 1.5rem;
+    padding-left: 0.3rem;
   }
 `;
 
@@ -34,8 +33,11 @@ export const Links = styled.div`
     text-decoration: none;
     color: #fff;
     margin: 1rem;
+
     &:hover {
-      color: #999;
+      border-bottom: 1px solid #fff;
+      padding-bottom: 5px;
+      font-weight: bold;
     }
   }
 `;
@@ -52,22 +54,26 @@ export const Search = styled.div`
 export const Login = styled.div`
   display: flex;
 
+  svg {
+    cursor: pointer;
+  }
+
   button {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #4fdc7c;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     padding: 0.5rem;
     width: 5rem;
-    border-radius: 0.2rem;
+    border-radius: 0.4rem;
     cursor: pointer;
     font-weight: bold;
     border: none;
     margin-right: 1rem;
 
     &:hover {
-      background-color: #3faf63;
+      color: #555;
     }
   }
 `;
