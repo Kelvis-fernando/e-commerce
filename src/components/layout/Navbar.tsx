@@ -3,9 +3,10 @@ import { ShoppingCart, Coffee } from "phosphor-react";
 import { useModal } from "../../hooks/layout/useModal";
 import { Link } from "react-router-dom";
 import Modal from "./Modal";
+import LoginModal from "../auth/LoginModal";
 
 const Navbar = () => {
-const {setIsModalOpen, isModalOpen, handleModalClose} =  useModal()
+  const { setIsModalOpen, isModalOpen, handleModalClose } = useModal();
 
   return (
     <Header>
@@ -26,8 +27,7 @@ const {setIsModalOpen, isModalOpen, handleModalClose} =  useModal()
         <ShoppingCart size={30} />
       </Login>
       <Modal isOpen={isModalOpen} onClose={handleModalClose}>
-        <h2>Modal</h2>
-        <p>Este é um exemplo de Modal.</p>
+        <LoginModal />
       </Modal>
     </Header>
   );

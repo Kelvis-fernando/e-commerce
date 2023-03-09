@@ -17,12 +17,12 @@ export const ModalContent = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
-  padding: 20px;
+  padding: 2rem !important;
   border-radius: 0.3rem;
   color: #000;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
 
   svg {

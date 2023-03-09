@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Header = styled.header`
   background-color: #033b3d;
-  height: 10vh;
-  width: 100vw;
+  height: 5rem;
+  width: 100%;
   display: flex;
   align-items: center;
   color: #fff;
