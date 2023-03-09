@@ -2,9 +2,10 @@ import { Header, Logo, Links, Login } from "../../styles/layout/navbar";
 import { ShoppingCart, Coffee } from "phosphor-react";
 import { useModal } from "../../hooks/layout/useModal";
 import { Link } from "react-router-dom";
+import Modal from "./Modal";
 
 const Navbar = () => {
-  const { onOpen } = useModal();
+const {setIsModalOpen, isModalOpen, handleModalClose} =  useModal()
 
   return (
     <Header>
@@ -21,9 +22,13 @@ const Navbar = () => {
         <Link to="/contact">Fale conosco</Link>
       </Links>
       <Login>
-        <button onClick={() => onOpen}>Login</button>
+        <button onClick={() => setIsModalOpen(true)}>Login</button>
         <ShoppingCart size={30} />
       </Login>
+      <Modal isOpen={isModalOpen} onClose={handleModalClose}>
+        <h2>Modal</h2>
+        <p>Este é um exemplo de Modal.</p>
+      </Modal>
     </Header>
   );
 };

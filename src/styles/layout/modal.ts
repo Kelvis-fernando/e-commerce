@@ -1,27 +1,35 @@
 import styled from "styled-components";
 
-export const ModalContainer = styled.div`
-  position: absolute;
-  z-index: 1000;
-  border-radius: 0.3rem;
-  width: 30vw;
-  height: 50vh;
-  margin-left: auto;
-  margin-right: auto;
+export const ModalWrapper = styled.div<{ isOpen: boolean }>`
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
-  box-shadow: 1px 1px 1px 3px rgba(0, 0, 0, 0.2);
-
-  h1 {
-    font-size: 1.5rem;
-  }
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 `;
 
-export const HeaderModal = styled.header`
+export const ModalContent = styled.div`
   position: absolute;
-  right: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 0.3rem;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
 
-  &:hover {
-    color: #999;
+  svg {
+    cursor: pointer;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    font-weight: bold;
   }
 `;

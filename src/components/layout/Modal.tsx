@@ -1,20 +1,18 @@
-import { XCircle } from "phosphor-react";
-import { useModal } from "../../hooks/layout/useModal";
-import { ModalContainer, HeaderModal } from "../../styles/layout/modal";
+import React from "react";
+import { ModalContent, ModalWrapper } from "../../styles/layout/modal";
 import { ModalProps } from "../../types/modal";
+import { X } from "phosphor-react";
 
-const Modal = ({ title, message, close, open }: ModalProps) => {
-  const { onClose } = useModal();
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+  if (!isOpen) return null;
 
   return (
-    <ModalContainer>
-      <HeaderModal>
-        <XCircle size={32} onClick={() => onClose()} />
-      </HeaderModal>
-
-      <h1>{title}</h1>
-      <p>{message}</p>
-    </ModalContainer>
+    <ModalWrapper isOpen={isOpen}>
+      <ModalContent>
+        <X onClick={onClose} color="#000" size={25} />
+        {children}
+      </ModalContent>
+    </ModalWrapper>
   );
 };
 

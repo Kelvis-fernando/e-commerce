@@ -1,20 +1,15 @@
 import { useState } from "react";
 
 export const useModal = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const onClose = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const onOpen = () => {
-    setIsOpen(true);
+  const handleModalClose = () => {
+    setIsModalOpen(false);
   };
 
   return {
-    onClose,
-    isOpen,
-    setIsOpen,
-    onOpen,
+    handleModalClose,
+    isModalOpen,
+    setIsModalOpen,
   };
 };
