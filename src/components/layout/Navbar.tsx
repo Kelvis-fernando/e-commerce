@@ -1,7 +1,7 @@
 import { Header, Logo, Links, Login } from "../../styles/layout/navbar";
 import { ShoppingCart, Coffee } from "phosphor-react";
 import { useModal } from "../../hooks/layout/useModal";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { onOpen } = useModal();
@@ -13,9 +13,10 @@ const Navbar = () => {
         <h1>Coffee express</h1>
       </Logo>
       <Links>
-        <NavLink to="products">Produtos</NavLink>
-        <NavLink to="about">Sobre</NavLink>
-        <NavLink to="contact">Fale conosco</NavLink>
+        <Link to="/home">Home</Link>
+        <Link to="/products">Produtos</Link>
+        <Link to="/about">Sobre</Link>
+        <Link to="/contact">Fale conosco</Link>
       </Links>
       <Login>
         <button onClick={() => onOpen}>Login</button>
