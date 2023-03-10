@@ -4,9 +4,12 @@ import { useModal } from "../../hooks/layout/useModal";
 import { Link } from "react-router-dom";
 import Modal from "./Modal";
 import LoginModal from "../auth/LoginModal";
+import Cart from "../Cart";
+import useCart from "../../hooks/useCart";
 
 const Navbar = () => {
   const { setIsModalOpen, isModalOpen, handleModalClose } = useModal();
+  const { isCartOpen, setIsCartOpen, handleCloseCart } = useCart();
 
   return (
     <Header>
@@ -24,11 +27,12 @@ const Navbar = () => {
       </Links>
       <Login>
         <button onClick={() => setIsModalOpen(true)}>Login</button>
-        <ShoppingCart size={30} />
+        <ShoppingCart onClick={() => setIsCartOpen(true)} size={30} />
       </Login>
       <Modal isOpen={isModalOpen} onClose={handleModalClose}>
         <LoginModal />
       </Modal>
+      <Cart isOpen={isCartOpen} onClose={handleCloseCart} />
     </Header>
   );
 };
