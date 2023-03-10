@@ -23,7 +23,6 @@ const Navbar = () => {
         <Link to="/home">Home</Link>
         <Link to="/products">Produtos</Link>
         <Link to="/about">Sobre</Link>
-        <Link to="/contact">Fale conosco</Link>
       </Links>
       <Login>
         <button onClick={() => setIsModalOpen(true)}>Login</button>

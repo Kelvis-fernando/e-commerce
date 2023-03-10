@@ -1,10 +1,40 @@
-import Navbar from "./components/layout/Navbar";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ErrorPage from "./pages/ErrorPage";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
 import { Main } from "./styles/app";
 
 const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/home",
+      element: <Home />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/products",
+      element: <Products />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/about",
+      element: <App />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/contact",
+      element: <App />,
+      errorElement: <ErrorPage />,
+    },
+  ]);
   return (
     <Main>
-      <Navbar />
+      <RouterProvider router={router} />
     </Main>
   );
 };
