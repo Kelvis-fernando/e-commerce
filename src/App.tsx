@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
@@ -23,12 +24,7 @@ const App = () => {
     },
     {
       path: "/about",
-      element: <App />,
-      errorElement: <ErrorPage />,
-    },
-    {
-      path: "/contact",
-      element: <App />,
+      element: <About />,
       errorElement: <ErrorPage />,
     },
   ]);

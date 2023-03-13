@@ -6,7 +6,6 @@ export const ProductCardContainer = styled.div`
   align-items: center;
   position: relative;
   width: 250px;
-  height: 380px;
   background-color: #f5f5f1;
   border-radius: 5px;
   cursor: pointer;
@@ -37,8 +36,41 @@ export const ProductCardContainer = styled.div`
 
   p {
     margin-top: 0.5rem;
-    color: #A1A2A6;
+    color: #a1a2a6;
     font-size: 0.8rem;
     text-align: center;
+  }
+`;
+
+export const CardAction = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+
+  button {
+    margin-top: 1rem;
+    border-radius: 0.3rem;
+    background-color: #033b3d;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0d4a3a;
+    }
+  }
+
+  svg {
+    margin-top: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+
+    &:hover {
+      color: #bd2a2e;
+    }
   }
 `;
