@@ -47,21 +47,7 @@ export const CardAction = styled.div`
   align-items: center;
   justify-content: space-around;
   width: 100%;
-
-  button {
-    margin-top: 1rem;
-    border-radius: 0.3rem;
-    background-color: #033b3d;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    font-weight: bold;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #0d4a3a;
-    }
-  }
+  margin-top: 1rem;
 
   svg {
     margin-top: 1rem;
@@ -72,5 +58,19 @@ export const CardAction = styled.div`
     &:hover {
       color: #bd2a2e;
     }
+  }
+`;
+
+export const CardButton = styled.button`
+  border-radius: 0.3rem;
+  background-color: #033b3d;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0d4a3a;
   }
 `;

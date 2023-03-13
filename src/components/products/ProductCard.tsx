@@ -1,9 +1,10 @@
-import { Heart } from "phosphor-react";
 import {
   CardAction,
+  CardButton,
   ProductCardContainer,
 } from "../../styles/products/productCard";
 import { ProductCardProps } from "../../types/productCardProps";
+import Quantity from "../layout/Quantity";
 
 const ProductCard = ({
   id,
@@ -20,8 +21,8 @@ const ProductCard = ({
       <h2>{`$${price} ${brand}`}</h2>
       <p>{description}</p>
       <CardAction>
-        <button>Comprar</button>
-        <Heart size={32} />
+        <CardButton>Comprar</CardButton>
+        <Quantity />
       </CardAction>
     </ProductCardContainer>
   );
