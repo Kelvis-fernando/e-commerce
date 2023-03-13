@@ -1,3 +1,4 @@
+import FilterBar from "../components/layout/FilterBar";
 import Navbar from "../components/layout/Navbar";
 import ProductCard from "../components/products/ProductCard";
 import useProducts from "../hooks/products/useProducts";
@@ -11,6 +12,7 @@ const Products = () => {
   return (
     <Main>
       <Navbar />
+      <FilterBar />
       <ProductsContainer>
         {products &&
           products?.map((product: ProductCardProps, index) => (
