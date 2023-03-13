@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import About from "./pages/About";
+import Producer from "./pages/Producer";
 import ErrorPage from "./pages/ErrorPage";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
@@ -23,8 +23,8 @@ const App = () => {
       errorElement: <ErrorPage />,
     },
     {
-      path: "/about",
-      element: <About />,
+      path: "/producer",
+      element: <Producer />,
       errorElement: <ErrorPage />,
     },
   ]);
