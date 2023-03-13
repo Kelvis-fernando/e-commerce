@@ -21,6 +21,7 @@ const Products = () => {
               price={product?.price}
               brand={product?.brand}
               image={product?.image}
+              description={product?.description}
             />
           ))}
       </ProductsContainer>
