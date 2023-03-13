@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   padding-top: 0.2rem;
 
@@ -23,16 +22,38 @@ export const HomeContainer = styled.div`
   }
 `;
 
-export const HomeProducts = styled.div`
+export const HomeWelcome = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #889c9b;
-  width: 98vw;
-  margin-top: 1rem;
+  width: 60%;
+  font-style: italic;
+  text-align: center;
 
   h1 {
-    color: #FFF;
+    color: #fff;
     font-weight: 400;
+  }
+
+  p {
+    margin-top: 1rem;
+    color: #B2BEBF;
+    font-weight: 400;
+  }
+
+  a {
+    margin-top: 1rem;
+    border: none;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+      color: #555;
+    }
   }
 `;
