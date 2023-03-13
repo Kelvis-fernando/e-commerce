@@ -18,7 +18,10 @@ const ProductCard = ({
     <ProductCardContainer onClick={() => console.log(id)}>
       <img src={image} alt="product" />
       <h1>{title}</h1>
-      <h2>{`$${price} ${brand}`}</h2>
+      <h2>
+        <span>$ {price}</span>
+        <span>{brand}</span>
+      </h2>
       <p>{description}</p>
       <CardAction>
         <CardButton>Comprar</CardButton>

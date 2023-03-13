@@ -31,7 +31,9 @@ export const ProductCardContainer = styled.div`
     color: #555;
     font-style: italic;
     display: flex;
+    justify-content: space-around;
     padding-top: 0.3rem;
+    width: 100%;
   }
 
   p {
