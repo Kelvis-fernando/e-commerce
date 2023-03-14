@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const userStates = createSlice({
   name: "geralState",
   initialState: {
-    userLoged: false,
+    userLoged: true,
   },
   reducers: {
     setUserLoged: (state) => {
