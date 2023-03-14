@@ -1,23 +1,38 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import LoginModal from "../components/auth/LoginModal";
 import Modal from "../components/layout/Modal";
 import Navbar from "../components/layout/Navbar";
 import { useModal } from "../hooks/layout/useModal";
-import useProducer from "../hooks/producer/useProducer";
 import { Main } from "../styles/app";
+import { configureStore } from "@reduxjs/toolkit";
+import { userStates, setUserLoged, setUserLogout } from "../states/userStates";
 
 const Producer = () => {
-  const { login } = useProducer();
-  const { handleModalClose, isModalOpen, setIsModalOpen } = useModal();
+  const { isModalOpen, setIsModalOpen } = useModal();
+  const store = configureStore({
+    reducer: userStates.reducer,
+  });
+
+  const [userIsLoged, setUserIsLoged] = useState(store.getState().userLoged);
 
   useEffect(() => {
-    setIsModalOpen(true);
-  }, [setIsModalOpen]);
+    userIsLoged ? setIsModalOpen(false) : setIsModalOpen(true);
+  }, [setIsModalOpen, store, userIsLoged]);
+
+  const handleUserLoged = () => {
+    store.dispatch(setUserLoged());
+    setUserIsLoged(store.getState().userLoged);
+  };
+
+  const handleUserLogout = () => {
+    store.dispatch(setUserLogout());
+    setUserIsLoged(store.getState().userLoged);
+  };
 
   return (
     <Main>
       <Navbar />
-      {login ? (
+      {userIsLoged ? (
         <div>
           <h1>Bem vindo</h1>
         </div>
