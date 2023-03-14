@@ -9,7 +9,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   return (
     <ModalWrapper isOpen={isOpen}>
       <ModalContent>
-        <X onClick={onClose} color="#000" size={25} />
+        {onClose ? <X onClick={onClose} color="#000" size={25} /> : null}
         {children}
       </ModalContent>
     </ModalWrapper>

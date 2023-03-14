@@ -7,7 +7,7 @@ const Quantity = () => {
   return (
     <QuantityContainer>
       <button onClick={handleIncrement}>+</button>
-      <div>{quantity}</div>
+      <div>{quantity < 0 ? 0 : quantity}</div>
       <button onClick={handleDecrement}>-</button>
     </QuantityContainer>
   );

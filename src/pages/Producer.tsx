@@ -1,9 +1,19 @@
+import { useEffect } from "react";
+import LoginModal from "../components/auth/LoginModal";
+import Modal from "../components/layout/Modal";
 import Navbar from "../components/layout/Navbar";
+import { useModal } from "../hooks/layout/useModal";
 import useProducer from "../hooks/producer/useProducer";
 import { Main } from "../styles/app";
 
 const Producer = () => {
   const { login } = useProducer();
+  const { handleModalClose, isModalOpen, setIsModalOpen } = useModal();
+
+  useEffect(() => {
+    setIsModalOpen(true);
+  }, [setIsModalOpen]);
+
   return (
     <Main>
       <Navbar />
@@ -13,7 +23,9 @@ const Producer = () => {
         </div>
       ) : (
         <div>
-          <h1>Você precisa logar para ter acesso a essa pagina</h1>
+          <Modal isOpen={isModalOpen}>
+            <LoginModal />
+          </Modal>
         </div>
       )}
     </Main>
