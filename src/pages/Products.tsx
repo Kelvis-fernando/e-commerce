@@ -24,6 +24,7 @@ const Products = () => {
               brand={product?.brand}
               image={product?.image}
               description={product?.description}
+              product={product}
             />
           ))}
       </ProductsContainer>

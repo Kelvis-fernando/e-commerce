@@ -1,10 +1,13 @@
+import { useModal } from "../../hooks/layout/useModal";
 import {
   CardAction,
   CardButton,
   ProductCardContainer,
 } from "../../styles/products/productCard";
 import { ProductCardProps } from "../../types/productCardProps";
+import Modal from "../layout/Modal";
 import Quantity from "../layout/Quantity";
+import ProductExpandedModal from "./ProductExpandedModal";
 
 const ProductCard = ({
   id,
@@ -13,21 +16,29 @@ const ProductCard = ({
   image,
   price,
   description,
+  product,
 }: ProductCardProps) => {
+  const { handleModalClose, isModalOpen, setIsModalOpen } = useModal();
+
   return (
-    <ProductCardContainer onClick={() => console.log(id)}>
-      <img src={image} alt="product" />
-      <h1>{title}</h1>
-      <h2>
-        <span>$ {price}</span>
-        <span>{brand}</span>
-      </h2>
-      <p>{description}</p>
-      <CardAction>
-        <CardButton>Comprar</CardButton>
-        <Quantity />
-      </CardAction>
-    </ProductCardContainer>
+    <>
+      <ProductCardContainer onClick={() => setIsModalOpen(true)}>
+        <img src={image} alt="product" />
+        <h1>{title}</h1>
+        <h2>
+          <span>$ {price}</span>
+          <span>{brand}</span>
+        </h2>
+        <p>{description}</p>
+        <CardAction>
+          <CardButton>Comprar</CardButton>
+          <Quantity />
+        </CardAction>
+      </ProductCardContainer>
+      <Modal isOpen={isModalOpen} onClose={handleModalClose}>
+        <ProductExpandedModal product={product} />
+      </Modal>
+    </>
   );
 };
 

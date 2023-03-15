@@ -5,4 +5,5 @@ export interface ProductCardProps {
   image?: string;
   price: string;
   description?: string;
+  product?: ProductCardProps
 }
