@@ -22,14 +22,16 @@ const ProductCard = ({
 
   return (
     <>
-      <ProductCardContainer onClick={() => setIsModalOpen(true)}>
-        <img src={image} alt="product" />
-        <h1>{title}</h1>
-        <h2>
-          <span>$ {price}</span>
-          <span>{brand}</span>
-        </h2>
-        <p>{description}</p>
+      <ProductCardContainer>
+        <div onClick={() => setIsModalOpen(true)}>
+          <img src={image} alt="product" />
+          <h1>{title}</h1>
+          <h2>
+            <span>$ {price}</span>
+            <span>{brand}</span>
+          </h2>
+          <p>{description}</p>
+        </div>
         <CardAction>
           <CardButton>Comprar</CardButton>
           <Quantity />
