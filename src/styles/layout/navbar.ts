@@ -63,6 +63,9 @@ export const Login = styled.div`
 
   svg {
     cursor: pointer;
+    &:hover {
+      color: #B2BEBF;
+    }
   }
 
   button {
