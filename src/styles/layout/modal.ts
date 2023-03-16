@@ -24,7 +24,9 @@ export const ModalContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
 
+export const CloseModal = styled.div`
   svg {
     cursor: pointer;
     position: absolute;

@@ -1,5 +1,5 @@
 import React from "react";
-import { ModalContent, ModalWrapper } from "../../styles/layout/modal";
+import { ModalContent, ModalWrapper, CloseModal } from "../../styles/layout/modal";
 import { ModalProps } from "../../types/modal";
 import { X } from "phosphor-react";
 
@@ -9,7 +9,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   return (
     <ModalWrapper isOpen={isOpen}>
       <ModalContent>
-        {onClose ? <X onClick={onClose} color="#000" size={25} /> : null}
+        {onClose ? <CloseModal><X onClick={onClose} color="#000" size={25} /></CloseModal> : null}
         {children}
       </ModalContent>
     </ModalWrapper>
