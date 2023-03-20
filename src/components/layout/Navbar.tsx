@@ -6,6 +6,8 @@ import Modal from "./Modal";
 import LoginModal from "../auth/LoginModal";
 import Cart from "../Cart";
 import useCart from "../../hooks/useCart";
+import ForgotPasswordModal from "../auth/ForgotPasswordModal";
+import RegisterModal from "../auth/RegisterModal";
 
 const Navbar = () => {
   const { setIsModalOpen, isModalOpen, handleModalClose } = useModal();
@@ -30,6 +32,12 @@ const Navbar = () => {
       </Login>
       <Modal isOpen={isModalOpen} onClose={handleModalClose}>
         <LoginModal />
+      </Modal>
+      <Modal isOpen={false} onClose={handleModalClose}>
+        <ForgotPasswordModal />
+      </Modal>
+      <Modal isOpen={false} onClose={handleModalClose}>
+        <RegisterModal />
       </Modal>
       <Cart isOpen={isCartOpen} onClose={handleCloseCart} />
     </Header>

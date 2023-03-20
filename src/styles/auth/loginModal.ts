@@ -51,4 +51,28 @@ export const LoginModalContainer = styled.div`
       background-color: #0d4a3a;
     }
   }
+
+  select {
+    width: 20rem;
+    height: 2.3rem;
+    border: 1px solid #0d4a3a;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    margin-top: 0.3rem;
+  }
+
+  span {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+    h2 {
+      cursor: pointer;
+
+      &:hover {
+        color: #555;
+      }
+    }
+  }
 `;
