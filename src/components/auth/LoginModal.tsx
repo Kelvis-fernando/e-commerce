@@ -1,9 +1,9 @@
-import { LoginModalContainer } from "../../styles/auth/loginModal";
+import { AuthModalContainer } from "../../styles/auth/loginModal";
 import TitleAndSubtitle from "../layout/TitleAndSubtitle";
 
 const LoginModal = () => {
   return (
-    <LoginModalContainer>
+    <AuthModalContainer>
       <TitleAndSubtitle
         title="Olá, seja bem vindo"
         subtitle="Entre na sua conta"
@@ -19,7 +19,7 @@ const LoginModal = () => {
         <h2>Cadastre-se</h2>
         <h2>Esqueceu a senha?</h2>
       </span>
-    </LoginModalContainer>
+    </AuthModalContainer>
   );
 };
 

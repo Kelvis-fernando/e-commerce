@@ -1,9 +1,9 @@
-import { LoginModalContainer } from "../../styles/auth/loginModal";
+import { AuthModalContainer } from "../../styles/auth/loginModal";
 import TitleAndSubtitle from "../layout/TitleAndSubtitle";
 
 const RegisterModal = () => {
   return (
-    <LoginModalContainer>
+    <AuthModalContainer>
       <TitleAndSubtitle
         title="Ainda não tem uma conta?"
         subtitle="Adicione os seus dados para poder fazer os seus pedidos"
@@ -26,7 +26,7 @@ const RegisterModal = () => {
         <button type="submit">Entrar</button>
       </form>
       <h2>Voltar</h2>
-    </LoginModalContainer>
+    </AuthModalContainer>
   );
 };
 

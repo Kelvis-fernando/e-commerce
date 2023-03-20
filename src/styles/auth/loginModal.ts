@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LoginModalContainer = styled.div`
+export const AuthModalContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
