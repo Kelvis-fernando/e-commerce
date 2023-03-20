@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 import { FormEvent } from "react";
 import {
   AddProductFormContainer,
@@ -80,8 +80,8 @@ const AddProductForm = () => {
           <input type="text" name="notes" id="notes" />
         </div>
         <div>
-          <label htmlFor="description">Descrição</label>
-          <input type="text" name="description" id="description" />
+          <label htmlFor="quantity">Quantidade em estoque</label>
+          <input type="number" name="quantity" id="quantity" />
         </div>
       </InputStyles>
       <button type="submit">ADICIONAR</button>

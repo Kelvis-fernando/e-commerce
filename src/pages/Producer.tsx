@@ -48,6 +48,7 @@ const Producer = () => {
               <span>brand</span>
               <span>type</span>
               <span>price</span>
+              <span>quantity</span>
               <div>
                 <Pencil size={20} />
                 <span>
