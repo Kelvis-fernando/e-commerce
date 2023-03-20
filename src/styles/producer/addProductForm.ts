@@ -24,6 +24,15 @@ export const AddProductFormContainer = styled.form`
     margin-top: 0.3rem;
   }
 
+  select {
+    width: 20rem;
+    height: 2.3rem;
+    border: 1px solid #0d4a3a;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    margin-top: 0.3rem;
+  }
+
   button {
     margin-top: 1rem;
     border-radius: 0.3rem;
