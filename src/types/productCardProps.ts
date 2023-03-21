@@ -1,6 +1,6 @@
 export interface ProductCardProps {
   id: number;
-  title: string;
+  name: string;
   brand: string;
   image?: string;
   price: string;
@@ -10,5 +10,7 @@ export interface ProductCardProps {
   notes?: string;
   itensity?: string;
   origin?: string;
+  quantity?: number;
+  type?: string;
   typeRoast?: string;
 }

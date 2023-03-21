@@ -9,26 +9,11 @@ import {
 } from "../styles/producer/producer";
 import { Pencil, Plus, Trash } from "phosphor-react";
 import AddProductForm from "../components/producer/AddProductForm";
+import useProducer from "../hooks/producer/useProducer";
 
 const Producer = () => {
   const { isModalOpen, setIsModalOpen, handleModalClose } = useModal();
-
-  /** 
-   * TO-DO: Adicionar ao login mudando o estado
-  const store = configureStore({
-    reducer: userStates.reducer,
-  });
-
-  const [userIsLoged, setUserIsLoged] = useState(store.getState().userLoged);
-  const handleUserLoged = () => {
-    store.dispatch(setUserLoged());
-    setUserIsLoged(store.getState().userLoged);
-  };
-  const handleUserLogout = () => {
-    store.dispatch(setUserLogout());
-    setUserIsLoged(store.getState().userLoged);
-  };
-  */
+  const { productsRegistered } = useProducer();
 
   return (
     <Main>
@@ -43,19 +28,22 @@ const Producer = () => {
         <ProducerItems>
           <h2>Produtos cadastrados:</h2>
           <ul>
-            <li>
-              <span>name</span>
-              <span>brand</span>
-              <span>type</span>
-              <span>price</span>
-              <span>quantity</span>
-              <div>
-                <Pencil size={20} />
-                <span>
-                  <Trash size={20} />
-                </span>
-              </div>
-            </li>
+            {productsRegistered &&
+              productsRegistered?.map((products) => (
+                <li>
+                  <span>{products?.name}</span>
+                  <span className="title">{products?.brand}</span>
+                  <span className="price">{products?.type}</span>
+                  <span>{products?.price}</span>
+                  <span>{products?.quantity}</span>
+                  <div>
+                    <Pencil size={20} />
+                    <span>
+                      <Trash size={20} />
+                    </span>
+                  </div>
+                </li>
+              ))}
           </ul>
         </ProducerItems>
         <Modal isOpen={isModalOpen} onClose={handleModalClose}>

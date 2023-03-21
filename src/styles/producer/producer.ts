@@ -77,7 +77,7 @@ export const ProducerItems = styled.div`
     }
 
     &:hover {
-      background-color: #203D3E;
+      background-color: #203d3e;
     }
   }
 `;

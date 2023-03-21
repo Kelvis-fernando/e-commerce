@@ -11,7 +11,7 @@ import ProductExpandedModal from "./ProductExpandedModal";
 
 const ProductCard = ({
   id,
-  title,
+  name,
   brand,
   image,
   price,
@@ -25,7 +25,7 @@ const ProductCard = ({
       <ProductCardContainer>
         <div onClick={() => setIsModalOpen(true)}>
           <img src={image} alt="product" />
-          <h1>{title}</h1>
+          <h1>{name}</h1>
           <h2>
             <span>$ {price}</span>
             <span>{brand}</span>
