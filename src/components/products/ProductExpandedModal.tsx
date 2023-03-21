@@ -10,7 +10,6 @@ interface ProductExpandedProps {
 }
 
 const ProductExpandedModal = ({ product }: ProductExpandedProps) => {
-  console.log(product);
   return (
     <ProductExpandedModalContainer>
       <CoffeInfo>
@@ -51,7 +50,7 @@ const ProductExpandedModal = ({ product }: ProductExpandedProps) => {
               <Fire size={32} />
             </div>
             <h2>Tipo de torra</h2>
-            <h3>{product?.typeRoast}</h3>
+            <h3>{product?.typeToast}</h3>
           </div>
         </CoffeSpecification>
         <button>Adicionar ao carrinho</button>

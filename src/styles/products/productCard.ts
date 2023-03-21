@@ -49,7 +49,7 @@ export const CardAction = styled.div`
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 0.3rem;
 
   svg {
     margin-top: 1rem;

@@ -1,13 +1,13 @@
 import FilterBar from "../components/layout/FilterBar";
 import Navbar from "../components/layout/Navbar";
 import ProductCard from "../components/products/ProductCard";
-import useProducts from "../hooks/products/useProducts";
+import { UseProducts } from "../hooks/products/useProducts";
 import { Main } from "../styles/app";
 import { ProductsContainer } from "../styles/products/products";
 import { ProductCardProps } from "../types/productCardProps";
 
 const Products = () => {
-  const { products } = useProducts();
+  const { products } = UseProducts();
 
   return (
     <Main>
@@ -15,9 +15,9 @@ const Products = () => {
       <FilterBar />
       <ProductsContainer>
         {products &&
-          products?.map((product: ProductCardProps, index) => (
+          products?.map((product: ProductCardProps) => (
             <ProductCard
-              key={index}
+              key={product.id}
               id={product?.id}
               title={product?.title}
               price={product?.price}
