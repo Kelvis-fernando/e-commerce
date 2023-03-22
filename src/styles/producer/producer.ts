@@ -47,37 +47,77 @@ export const ProducerItems = styled.div`
   margin-top: 2rem;
   width: 100%;
 
-  ul {
-    margin-top: 1rem;
-    list-style: none;
+  table {
+    width: 100%;
+  }
+  thead {
+    display: flex;
+    flex-direction: row;
   }
 
-  li {
+  tbody {
     display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid #a1a2a6;
-    padding: 1rem;
+  }
 
-    svg {
-      cursor: pointer;
-      color: #f2ae30;
-      &:hover {
-        color: #f5c46b;
-      }
-    }
+  td {
+    margin-top: 1rem;
+    width: 100%;
+    th {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #a1a2a6;
+      padding: 1rem;
+      width: 100%;
 
-    span {
       svg {
-        color: #bd2a2e;
+        cursor: pointer;
+        color: #f2ae30;
         &:hover {
-          color: #bd4646;
+          color: #f5c46b;
         }
-        margin-left: 1rem;
+      }
+
+      span {
+        width: 20%;
+        text-align: left;
+        svg {
+          color: #bd2a2e;
+          &:hover {
+            color: #bd4646;
+          }
+          margin-left: 1rem;
+        }
+      }
+
+      &:hover {
+        background-color: #203d3e;
       }
     }
+  }
 
-    &:hover {
-      background-color: #203d3e;
+  tr {
+    margin-top: 1rem;
+    width: 100%;
+    th {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #a1a2a6;
+      padding: 1rem;
+      width: 100%;
+
+      svg {
+        cursor: pointer;
+        color: #f2ae30;
+        &:hover {
+          color: #f5c46b;
+        }
+      }
+
+      span {
+        width: 10%;
+        text-align: center;
+        color: #B2BEBF;
+      }
     }
   }
 `;

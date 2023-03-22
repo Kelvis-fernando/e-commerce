@@ -25,26 +25,40 @@ const Producer = () => {
             <Plus /> ADICIONAR PRODUTO
           </button>
         </ProducerActions>
+        <h2>Produtos cadastrados:</h2>
         <ProducerItems>
-          <h2>Produtos cadastrados:</h2>
-          <ul>
-            {productsRegistered &&
-              productsRegistered?.map((products) => (
-                <li key={products?.id}>
-                  <span>{products?.name}</span>
-                  <span>{products?.brand}</span>
-                  <span>{products?.type}</span>
-                  <span>{products?.price}</span>
-                  <span>{products?.quantity}</span>
-                  <div>
-                    <Pencil size={20} />
-                    <span>
-                      <Trash size={20} />
-                    </span>
-                  </div>
-                </li>
-              ))}
-          </ul>
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <span>Nome</span>
+                  <span>Marca</span>
+                  <span>Preço</span>
+                  <span>Qtd</span>
+                  <span></span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <td>
+                {productsRegistered &&
+                  productsRegistered?.map((products) => (
+                    <th key={products?.id}>
+                      <span>{products?.name}</span>
+                      <span>{products?.brand}</span>
+                      <span>R$ {products?.price}</span>
+                      <span>{products?.quantity}</span>
+                      <div>
+                        <Pencil size={20} />
+                        <span>
+                          <Trash size={20} />
+                        </span>
+                      </div>
+                    </th>
+                  ))}
+              </td>
+            </tbody>
+          </table>
         </ProducerItems>
         <Modal isOpen={isModalOpen} onClose={handleModalClose}>
           <AddProductForm />

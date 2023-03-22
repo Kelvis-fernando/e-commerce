@@ -30,7 +30,6 @@ const ProductCard = ({
             <span>$ {price}</span>
             <span>{brand}</span>
           </h2>
-          {/* <p>{description}</p> */}
         </div>
         <CardAction>
           <CardButton>Comprar</CardButton>
