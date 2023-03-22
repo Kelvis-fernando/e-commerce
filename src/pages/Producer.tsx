@@ -30,10 +30,10 @@ const Producer = () => {
           <ul>
             {productsRegistered &&
               productsRegistered?.map((products) => (
-                <li>
+                <li key={products?.id}>
                   <span>{products?.name}</span>
-                  <span className="title">{products?.brand}</span>
-                  <span className="price">{products?.type}</span>
+                  <span>{products?.brand}</span>
+                  <span>{products?.type}</span>
                   <span>{products?.price}</span>
                   <span>{products?.quantity}</span>
                   <div>

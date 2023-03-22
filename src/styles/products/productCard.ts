@@ -46,7 +46,6 @@ export const ProductCardContainer = styled.div`
 
 export const CardAction = styled.div`
   display: flex;
-  align-items: center;
   justify-content: space-around;
   width: 100%;
   margin-top: 0.3rem;

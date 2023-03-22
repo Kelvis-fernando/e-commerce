@@ -1,32 +1,13 @@
 // import axios from "axios";
-import { FormEvent } from "react";
+import useAddProductForm from "../../hooks/producer/useAddProductForm";
 import {
   AddProductFormContainer,
   InputStyles,
 } from "../../styles/producer/addProductForm";
 
 const AddProductForm = () => {
-  const handleCreateProduct = async (event: FormEvent) => {
-    event.preventDefault();
-    const formData = new FormData(event.target as HTMLFormElement);
-    const data = Object.fromEntries(formData);
-    console.log(data);
+  const { handleCreateProduct } = useAddProductForm();
 
-    // try {
-    //   await axios.post(`http://localhost:3333/games/${data.game}/ads`, {
-    //     name: data.name,
-    //     yearsPlaying: Number(data.yearsPlaying),
-    //     discord: data.discord,
-    //     weekDays: weekDays.map(Number),
-    //     hourStart: data.hourStart,
-    //     hourEnd: data.hourEnd,
-    //     useVoiceChanel: useVoiceChanel,
-    //   });
-    //   alert("Criado com sucesso!");
-    // } catch (error) {
-    //   alert("Erro ao criar o anúncio");
-    // }
-  };
   return (
     <AddProductFormContainer onSubmit={handleCreateProduct}>
       <h1>Cadastre o produto</h1>
@@ -70,8 +51,8 @@ const AddProductForm = () => {
           <input type="text" name="origin" id="origin" />
         </div>
         <div>
-          <label htmlFor="typeToast">Tipo de torra</label>
-          <input type="text" name="typeToast" id="typeToast" />
+          <label htmlFor="typeRoast">Tipo de torra</label>
+          <input type="text" name="typeRoast" id="typeRoast" />
         </div>
       </InputStyles>
       <InputStyles>
@@ -82,6 +63,16 @@ const AddProductForm = () => {
         <div>
           <label htmlFor="quantity">Quantidade em estoque</label>
           <input type="number" name="quantity" id="quantity" />
+        </div>
+      </InputStyles>
+      <InputStyles>
+        <div>
+          <label htmlFor="description">Descrição</label>
+          <input type="text" name="description" id="description" />
+        </div>
+        <div>
+          <label htmlFor="image">Image</label>
+          <input type="text" name="image" id="image" />
         </div>
       </InputStyles>
       <button type="submit">ADICIONAR</button>
