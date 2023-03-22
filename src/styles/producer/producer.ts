@@ -53,70 +53,69 @@ export const ProducerItems = styled.div`
   thead {
     display: flex;
     flex-direction: row;
-  }
 
-  tbody {
-    display: flex;
-  }
-
-  td {
-    margin-top: 1rem;
-    width: 100%;
-    th {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid #a1a2a6;
-      padding: 1rem;
+    tr {
+      margin-top: 1rem;
       width: 100%;
+      th {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #a1a2a6;
+        padding: 1rem;
+        width: 100%;
 
-      svg {
-        cursor: pointer;
-        color: #f2ae30;
-        &:hover {
-          color: #f5c46b;
-        }
-      }
-
-      span {
-        width: 20%;
-        text-align: left;
         svg {
-          color: #bd2a2e;
+          cursor: pointer;
+          color: #f2ae30;
           &:hover {
-            color: #bd4646;
+            color: #f5c46b;
           }
-          margin-left: 1rem;
         }
-      }
 
-      &:hover {
-        background-color: #203d3e;
+        span {
+          width: 10%;
+          text-align: center;
+        }
       }
     }
   }
 
-  tr {
-    margin-top: 1rem;
-    width: 100%;
-    th {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid #a1a2a6;
-      padding: 1rem;
+  tbody {
+    display: flex;
+
+    tr {
+      margin-top: 1rem;
       width: 100%;
+      th {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #a1a2a6;
+        padding: 1rem;
+        width: 100%;
 
-      svg {
-        cursor: pointer;
-        color: #f2ae30;
-        &:hover {
-          color: #f5c46b;
+        svg {
+          cursor: pointer;
+          color: #f2ae30;
+          &:hover {
+            color: #f5c46b;
+          }
         }
-      }
 
-      span {
-        width: 10%;
-        text-align: center;
-        color: #B2BEBF;
+        span {
+          width: 20%;
+          text-align: left;
+          svg {
+            color: #bd2a2e;
+            &:hover {
+              color: #bd4646;
+            }
+            margin-left: 1rem;
+          }
+        }
+
+        &:hover {
+          background-color: #203d3e;
+        }
       }
     }
   }

@@ -6,13 +6,17 @@ const useProducer = () => {
   const [login, setIsLogin] = useState<boolean>(false);
   const [productsRegistered, setProductsRegistered] =
     useState<ProductCardProps[]>();
-  const { response } = ProducerService();
+  const { response, deleteData } = ProducerService();
 
   useEffect(() => {
     setProductsRegistered(response);
   }, [response]);
 
-  return { login, setIsLogin, productsRegistered };
+  const deleteProduct = async (id: number) => {
+    await deleteData(id);
+  };
+
+  return { login, setIsLogin, productsRegistered, deleteProduct };
 };
 
 export default useProducer;

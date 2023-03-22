@@ -38,5 +38,14 @@ export const ProducerService = () => {
     }
   };
 
-  return { response, postData };
+  const deleteData = async (id: number) => {
+    try {
+      const result = await axios.delete(
+        `https://localhost:7041/v1/coffee/${id}`
+      );
+      console.log(result, "deletado com sucesso");
+    } catch (error) {}
+  };
+
+  return { response, postData, deleteData };
 };

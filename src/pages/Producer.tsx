@@ -13,7 +13,7 @@ import useProducer from "../hooks/producer/useProducer";
 
 const Producer = () => {
   const { isModalOpen, setIsModalOpen, handleModalClose } = useModal();
-  const { productsRegistered } = useProducer();
+  const { productsRegistered, deleteProduct } = useProducer();
 
   return (
     <Main>
@@ -40,7 +40,7 @@ const Producer = () => {
               </tr>
             </thead>
             <tbody>
-              <td>
+              <tr>
                 {productsRegistered &&
                   productsRegistered?.map((products) => (
                     <th key={products?.id}>
@@ -51,12 +51,15 @@ const Producer = () => {
                       <div>
                         <Pencil size={20} />
                         <span>
-                          <Trash size={20} />
+                          <Trash
+                            size={20}
+                            onClick={() => deleteProduct(products?.id)}
+                          />
                         </span>
                       </div>
                     </th>
                   ))}
-              </td>
+              </tr>
             </tbody>
           </table>
         </ProducerItems>
