@@ -1,4 +1,5 @@
 import { useModal } from "../../hooks/layout/useModal";
+import { addItemToCart, store } from "../../states/cartState";
 import {
   CardAction,
   CardButton,
@@ -32,8 +33,10 @@ const ProductCard = ({
           </h2>
         </div>
         <CardAction>
-          <CardButton>Comprar</CardButton>
           <Quantity />
+          <CardButton onClick={() => store.dispatch(addItemToCart(product))}>
+            Comprar
+          </CardButton>
         </CardAction>
       </ProductCardContainer>
       <Modal isOpen={isModalOpen} onClose={handleModalClose}>

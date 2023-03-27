@@ -39,6 +39,8 @@ export const CartContent = styled.div`
   flex-direction: column;
   align-items: center;
   height: 30rem;
+  overflow-y: scroll;
+  overflow-x: none;
   width: 20rem;
   z-index: 999999;
 
@@ -74,5 +76,16 @@ export const CartContent = styled.div`
         cursor: pointer;
       }
     }
+  }
+`;
+
+export const TotalCart = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+
+  p {
+    margin-left: 1rem;
   }
 `;

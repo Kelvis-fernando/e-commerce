@@ -6,6 +6,7 @@ export const ProductCardContainer = styled.div`
   align-items: center;
   position: relative;
   width: 250px;
+  height: 80%;
   background-color: #f5f5f1;
   border-radius: 5px;
   cursor: pointer;
@@ -17,13 +18,13 @@ export const ProductCardContainer = styled.div`
   }
 
   img {
-    height: 80%;
+    height: 15rem;
     width: 100%;
     border-radius: 5px;
   }
 
   h1 {
-    font-size: 1.3rem;
+    font-size: 1rem;
     text-align: center;
   }
 
@@ -32,7 +33,7 @@ export const ProductCardContainer = styled.div`
     font-style: italic;
     display: flex;
     justify-content: space-around;
-    padding-top: 0.3rem;
+    padding-top: 1rem;
     width: 100%;
   }
 
@@ -48,7 +49,7 @@ export const CardAction = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin-top: 0.3rem;
+  margin-top: 1.5rem;
 
   svg {
     margin-top: 1rem;
