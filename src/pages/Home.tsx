@@ -3,6 +3,7 @@ import Navbar from "../components/layout/Navbar";
 import { Main } from "../styles/app";
 import { HomeContainer, HomeWelcome } from "../styles/home";
 import image from "../assets/capa.webp";
+import Toast from "../components/layout/Toast";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
         </HomeWelcome>
         <img src={image} alt="capa" />
       </HomeContainer>
+      <Toast title="Teste" message="Teste 2" />
     </Main>
   );
 };
