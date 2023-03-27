@@ -10,10 +10,18 @@ import {
 import { Pencil, Plus, Trash } from "phosphor-react";
 import AddProductForm from "../components/producer/AddProductForm";
 import useProducer from "../hooks/producer/useProducer";
+import { EditProductModal } from "../components/producer/EditProductForm";
 
 const Producer = () => {
   const { isModalOpen, setIsModalOpen, handleModalClose } = useModal();
-  const { productsRegistered, deleteProduct } = useProducer();
+  const {
+    productsRegistered,
+    deleteProduct,
+    isModalEditProducOpen,
+    setIsModalEditProducOpen,
+    productToEdit,
+    setProductToEdit,
+  } = useProducer();
 
   return (
     <Main>
@@ -49,7 +57,13 @@ const Producer = () => {
                       <span>R$ {products?.price}</span>
                       <span>{products?.quantity}</span>
                       <div>
-                        <Pencil size={20} />
+                        <Pencil
+                          size={20}
+                          onClick={() => {
+                            setIsModalEditProducOpen(true);
+                            setProductToEdit(products);
+                          }}
+                        />
                         <span>
                           <Trash
                             size={20}
@@ -65,6 +79,12 @@ const Producer = () => {
         </ProducerItems>
         <Modal isOpen={isModalOpen} onClose={handleModalClose}>
           <AddProductForm />
+        </Modal>
+        <Modal
+          isOpen={isModalEditProducOpen}
+          onClose={() => setIsModalEditProducOpen(false)}
+        >
+          <EditProductModal product={productToEdit} />
         </Modal>
       </ProducerContainer>
     </Main>

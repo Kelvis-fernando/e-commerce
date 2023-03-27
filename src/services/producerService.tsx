@@ -47,5 +47,31 @@ export const ProducerService = () => {
     } catch (error) {}
   };
 
-  return { response, postData, deleteData };
+  const updateData = async (product: any, id: number) => {
+    try {
+      const result = await axios.put(`https://localhost:7041/v1/coffee/${id}`, {
+        Name: String(product?.name),
+        Brand: String(product?.brand),
+        Price: Number(product?.price),
+        Description: String(product?.description),
+        Classification: String(product?.classification),
+        Image: String(product?.image),
+        Itensity: String(product?.itensity),
+        Notes: String(product?.notes),
+        Origin: String(product?.origin),
+        TypeToast: String(product?.typeToast),
+        Quantity: Number(product?.quantity),
+      });
+      console.log(result);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return {
+    response,
+    postData,
+    deleteData,
+    updateData,
+  };
 };
