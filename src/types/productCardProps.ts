@@ -12,5 +12,5 @@ export interface ProductCardProps {
   origin?: string;
   quantity?: number;
   type?: string;
-  typeRoast?: string;
+  typeToast?: string;
 }
