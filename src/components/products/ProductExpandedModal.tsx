@@ -1,5 +1,5 @@
 import { AlignBottom, Coffee, Fire, Package, Tree } from "phosphor-react";
-import { addItemToCart, store } from "../../states/cartState";
+import { addItemToCart, store } from "../../store/cartState";
 import {
   CoffeInfo,
   CoffeSpecification,

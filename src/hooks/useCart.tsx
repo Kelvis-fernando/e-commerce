@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { removeItemFromCart, store } from "../states/cartState";
+import { removeItemFromCart, store } from "../store/cartState";
 import { ProductCardProps } from "../types/productCardProps";
 
 const useCart = () => {

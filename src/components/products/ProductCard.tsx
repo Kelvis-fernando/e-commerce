@@ -1,6 +1,6 @@
 import { useModal } from "../../hooks/layout/useModal";
 import useQuantity from "../../hooks/layout/useQuantity";
-import { addItemToCart, store } from "../../states/cartState";
+import { addItemToCart, store } from "../../store/cartState";
 import { QuantityContainer } from "../../styles/layout/quantity";
 import {
   CardAction,
