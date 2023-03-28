@@ -33,11 +33,23 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
         </CloseCart>
         <h1>Carrinho</h1>
         <ul>
+          <li>
+            <div>Nome</div>
+            <span>Preço</span>
+            <span>Qtd</span>
+            <span></span>
+          </li>
+        </ul>
+        <ul>
           {cartItems.length > 0 ? (
             cartItems.map((item: ProductCardProps, index: number) => (
               <li key={index}>
-                <span>{item?.name}</span>
-                <Trash size={16} onClick={() => handleRemoveItem(item)} />
+                <div>{item?.name}</div>
+                <span>R$ {item?.price}</span>
+                <span>{item?.quantity}</span>
+                <span>
+                  <Trash size={16} onClick={() => handleRemoveItem(item)} />
+                </span>
               </li>
             ))
           ) : (

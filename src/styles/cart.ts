@@ -29,10 +29,10 @@ export const CartContent = styled.div`
 
   position: absolute;
   top: 48%;
-  right: -11%;
+  right: -14%;
   transform: translate(-50%, -50%);
   background-color: #fff;
-  padding: 2rem !important;
+  padding: 1rem !important;
   border-radius: 0.3rem;
   color: #000;
   display: flex;
@@ -41,7 +41,7 @@ export const CartContent = styled.div`
   height: 30rem;
   overflow-y: scroll;
   overflow-x: none;
-  width: 20rem;
+  width: 35%;
   z-index: 999999;
 
   button {
@@ -70,6 +70,19 @@ export const CartContent = styled.div`
       display: flex;
       justify-content: space-between;
       padding: 0.6rem;
+      display: flex;
+
+      div {
+        width: 10rem;
+      }
+
+      span {
+        width: 5rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
       svg {
         color: #bd2a2e;
