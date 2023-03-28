@@ -41,9 +41,7 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
               </li>
             ))
           ) : (
-            <li>
-              <span>nenhum item adicionado</span>
-            </li>
+            <li>Nenhum item adicionado</li>
           )}
         </ul>
         <TotalCart>
@@ -51,7 +49,12 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
           <p>
             R${" "}
             {cartItems
-              .map((price) => price.price * price.qtdAddedToCart)
+              .map((price) =>
+                typeof price.price === "number" &&
+                typeof price.qtdAddedToCart === "number"
+                  ? price.price * price.qtdAddedToCart
+                  : 0
+              )
               .reduce((total, actual) => {
                 return total + actual;
               }, 0)

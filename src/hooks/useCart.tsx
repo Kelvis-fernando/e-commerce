@@ -18,10 +18,16 @@ const useCart = () => {
   };
 
   const handleRemoveItem = (item: ProductCardProps) => {
-    store.dispatch(removeItemFromCart(item.id));
+    store.dispatch(removeItemFromCart(item.id ?? 0));
   };
 
-  return { cartItems, isCartOpen, setIsCartOpen, handleCloseCart, handleRemoveItem };
+  return {
+    cartItems,
+    isCartOpen,
+    setIsCartOpen,
+    handleCloseCart,
+    handleRemoveItem,
+  };
 };
 
 export default useCart;

@@ -1,9 +1,9 @@
 export interface ProductCardProps {
-  id: number;
-  name: string;
-  brand: string;
+  id?: number;
+  name?: string;
+  brand?: string;
   image?: string;
-  price: string;
+  price?: string;
   description?: string;
   product?: ProductCardProps;
   classification?: string;

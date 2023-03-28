@@ -22,11 +22,6 @@ export const CloseCart = styled.div`
 `;
 
 export const CartContent = styled.div`
-  h1 {
-    font-size: 1.3rem;
-    font-weight: bold;
-  }
-
   position: absolute;
   top: 48%;
   right: -14%;
@@ -43,6 +38,11 @@ export const CartContent = styled.div`
   overflow-x: none;
   width: 35%;
   z-index: 999999;
+
+  h1 {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
 
   button {
     margin-top: 1rem;
@@ -63,6 +63,7 @@ export const CartContent = styled.div`
   ul {
     list-style: none;
     width: 100%;
+    margin-bottom: 1rem;
 
     li {
       border-bottom: 1px solid #b2bebf;

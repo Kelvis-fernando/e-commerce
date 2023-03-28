@@ -67,7 +67,7 @@ const Producer = () => {
                         <span>
                           <Trash
                             size={20}
-                            onClick={() => deleteProduct(products?.id)}
+                            onClick={() => deleteProduct(products.id ?? 0)}
                           />
                         </span>
                       </div>
