@@ -8,10 +8,11 @@ import Cart from "../Cart";
 import useCart from "../../hooks/useCart";
 import ForgotPasswordModal from "../auth/ForgotPasswordModal";
 import RegisterModal from "../auth/RegisterModal";
+import Badge from "./Badge";
 
 const Navbar = () => {
   const { setIsModalOpen, isModalOpen, handleModalClose } = useModal();
-  const { isCartOpen, setIsCartOpen, handleCloseCart } = useCart();
+  const { isCartOpen, setIsCartOpen, handleCloseCart, cartItems } = useCart();
 
   return (
     <Header>
@@ -28,7 +29,9 @@ const Navbar = () => {
       </Links>
       <Login>
         <button onClick={() => setIsModalOpen(true)}>Login</button>
-        <ShoppingCart onClick={() => setIsCartOpen(true)} size={30} />
+        <Badge items={cartItems.length}>
+          <ShoppingCart onClick={() => setIsCartOpen(true)} size={30} />
+        </Badge>
       </Login>
       <Modal isOpen={isModalOpen} onClose={handleModalClose}>
         <LoginModal />
