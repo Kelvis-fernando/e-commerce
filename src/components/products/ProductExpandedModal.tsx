@@ -1,4 +1,5 @@
 import { AlignBottom, Coffee, Fire, Package, Tree } from "phosphor-react";
+import { addItemToCart, store } from "../../states/cartState";
 import {
   CoffeInfo,
   CoffeSpecification,
@@ -53,7 +54,9 @@ const ProductExpandedModal = ({ product }: ProductExpandedProps) => {
             <h3>{product?.typeToast}</h3>
           </div>
         </CoffeSpecification>
-        <button>Adicionar ao carrinho</button>
+        <button onClick={() => store.dispatch(addItemToCart(product))}>
+          Adicionar ao carrinho
+        </button>
       </CoffeInfo>
       <img src={product?.image} alt="product" />
     </ProductExpandedModalContainer>
