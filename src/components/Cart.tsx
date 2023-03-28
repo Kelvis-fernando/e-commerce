@@ -6,23 +6,11 @@ import {
 } from "../styles/cart";
 import { CartProps } from "../types/cart";
 import { X, Trash } from "phosphor-react";
-import { removeItemFromCart, store } from "../states/cartState";
 import { ProductCardProps } from "../types/productCardProps";
-import { useState, useEffect } from "react";
+import useCart from "../hooks/useCart";
 
 const Cart = ({ isOpen, onClose }: CartProps) => {
-  const [cartItems, setCartItems] = useState(store.getState().items);
-
-  useEffect(() => {
-    const unsubscribe = store.subscribe(() => {
-      setCartItems(store.getState().items);
-    });
-    return unsubscribe;
-  }, []);
-
-  const handleRemoveItem = (item: ProductCardProps) => {
-    store.dispatch(removeItemFromCart(item.id));
-  };
+  const { handleRemoveItem, cartItems } = useCart();
 
   if (!isOpen) return null;
   return (

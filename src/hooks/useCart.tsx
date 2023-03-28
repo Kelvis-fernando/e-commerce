@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { store } from "../states/cartState";
+import { removeItemFromCart, store } from "../states/cartState";
+import { ProductCardProps } from "../types/productCardProps";
 
 const useCart = () => {
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
@@ -16,7 +17,11 @@ const useCart = () => {
     setIsCartOpen(false);
   };
 
-  return { cartItems, isCartOpen, setIsCartOpen, handleCloseCart };
+  const handleRemoveItem = (item: ProductCardProps) => {
+    store.dispatch(removeItemFromCart(item.id));
+  };
+
+  return { cartItems, isCartOpen, setIsCartOpen, handleCloseCart, handleRemoveItem };
 };
 
 export default useCart;
