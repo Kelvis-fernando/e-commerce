@@ -8,7 +8,7 @@ interface BadgeProps {
 const Badge = ({ children, items }: BadgeProps) => {
   return (
     <BadgeContainer>
-      <div className="badge">{items}</div>
+      {items > 0 && <div className="badge">{items}</div>}
       {children}
     </BadgeContainer>
   );
