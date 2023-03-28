@@ -13,4 +13,5 @@ export interface ProductCardProps {
   quantity?: number;
   type?: string;
   typeToast?: string;
+  qtdAddedToCart?: number;
 }

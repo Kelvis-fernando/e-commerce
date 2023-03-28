@@ -2,12 +2,12 @@ import useQuantity from "../../hooks/layout/useQuantity";
 import { QuantityContainer } from "../../styles/layout/quantity";
 
 const Quantity = () => {
-  const { handleIncrement, handleDecrement, quantity } = useQuantity();
+  const { handleIncrement, handleDecrement } = useQuantity();
 
   return (
     <QuantityContainer>
       <button onClick={handleIncrement}>+</button>
-      <div>{quantity < 0 ? 0 : quantity}</div>
+      <div>quantity</div>
       <button onClick={handleDecrement}>-</button>
     </QuantityContainer>
   );

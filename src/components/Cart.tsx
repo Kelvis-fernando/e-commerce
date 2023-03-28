@@ -34,7 +34,7 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
               <li key={index}>
                 <div>{item?.name}</div>
                 <span>R$ {item?.price}</span>
-                <span>{item?.quantity}</span>
+                <span>{item?.qtdAddedToCart}</span>
                 <span>
                   <Trash size={16} onClick={() => handleRemoveItem(item)} />
                 </span>
@@ -51,7 +51,7 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
           <p>
             R${" "}
             {cartItems
-              .map((price) => price.price)
+              .map((price) => price.price * price.qtdAddedToCart)
               .reduce((total, actual) => {
                 return total + actual;
               }, 0)

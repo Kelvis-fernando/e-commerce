@@ -1,5 +1,7 @@
 import { useModal } from "../../hooks/layout/useModal";
+import useQuantity from "../../hooks/layout/useQuantity";
 import { addItemToCart, store } from "../../states/cartState";
+import { QuantityContainer } from "../../styles/layout/quantity";
 import {
   CardAction,
   CardButton,
@@ -7,19 +9,17 @@ import {
 } from "../../styles/products/productCard";
 import { ProductCardProps } from "../../types/productCardProps";
 import Modal from "../layout/Modal";
-import Quantity from "../layout/Quantity";
 import ProductExpandedModal from "./ProductExpandedModal";
 
 const ProductCard = ({
-  id,
   name,
   brand,
   image,
   price,
-  description,
   product,
 }: ProductCardProps) => {
   const { handleModalClose, isModalOpen, setIsModalOpen } = useModal();
+  const { handleIncrement, handleDecrement, quantity } = useQuantity();
 
   return (
     <>
@@ -28,13 +28,23 @@ const ProductCard = ({
           <img src={image} alt="product" />
           <h1>{name}</h1>
           <h2>
-            <span>$ {price}</span>
+            <span>R$ {price}</span>
             <span>{brand}</span>
           </h2>
         </div>
         <CardAction>
-          <Quantity />
-          <CardButton onClick={() => store.dispatch(addItemToCart(product))}>
+          <QuantityContainer>
+            <button onClick={handleIncrement}>+</button>
+            <div>{quantity}</div>
+            <button onClick={handleDecrement}>-</button>
+          </QuantityContainer>
+          <CardButton
+            onClick={() =>
+              store.dispatch(
+                addItemToCart({ ...product, qtdAddedToCart: quantity })
+              )
+            }
+          >
             Comprar
           </CardButton>
         </CardAction>

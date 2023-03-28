@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const useQuantity = () => {
-  let [quantity, setQuantity] = useState<number>(0);
+  let [quantity, setQuantity] = useState<number>(1);
 
   const handleIncrement = () => {
     setQuantity(++quantity);
