@@ -1,21 +1,22 @@
 import { AlignBottom, Coffee, Fire, Package, Tree } from "phosphor-react";
+import useToast from "../../hooks/useToast";
 import { addItemToCart, store } from "../../store/cartState";
 import {
   CoffeInfo,
   CoffeSpecification,
   ProductExpandedModalContainer,
 } from "../../styles/products/productExpandedModal";
+import { ProductCardProps } from "../../types/productCardProps";
+import Toast from "../Toast";
 
-interface ProductExpandedProps {
-  product: any;
-}
+const ProductExpandedModal = ({ product }: ProductCardProps) => {
+  const { showToast, handleCloseToast, handleButtonClick } = useToast();
 
-const ProductExpandedModal = ({ product }: ProductExpandedProps) => {
   return (
     <ProductExpandedModalContainer>
       <CoffeInfo>
         <h1>Sobre o café</h1>
-        <h2>{product?.title}</h2>
+        <h2>{product?.name}</h2>
         <span>{`${product?.brand} $ ${product?.price}`}</span>
         <CoffeSpecification>
           <div>
@@ -54,11 +55,23 @@ const ProductExpandedModal = ({ product }: ProductExpandedProps) => {
             <h3>{product?.typeToast}</h3>
           </div>
         </CoffeSpecification>
-        <button onClick={() => store.dispatch(addItemToCart(product))}>
+        <button
+          onClick={() => {
+            store.dispatch(addItemToCart(product));
+            handleButtonClick();
+          }}
+        >
           Adicionar ao carrinho
         </button>
       </CoffeInfo>
       <img src={product?.image} alt="product" />
+      {showToast && (
+        <Toast
+          typeOfToast="success"
+          message="Produto adicionado ao carrinho!"
+          onClose={handleCloseToast}
+        />
+      )}
     </ProductExpandedModalContainer>
   );
 };

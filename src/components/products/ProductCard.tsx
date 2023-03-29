@@ -54,7 +54,7 @@ const ProductCard = ({
         </CardAction>
       </ProductCardContainer>
       <Modal isOpen={isModalOpen} onClose={handleModalClose}>
-        <ProductExpandedModal product={product} />
+        <ProductExpandedModal product={product ?? {}} />
       </Modal>
       {showToast && (
         <Toast
