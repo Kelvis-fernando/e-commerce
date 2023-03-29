@@ -8,9 +8,12 @@ import { CartProps } from "../types/cart";
 import { X, Trash } from "phosphor-react";
 import { ProductCardProps } from "../types/productCardProps";
 import useCart from "../hooks/useCart";
+import Toast from "./Toast";
+import useToast from "../hooks/useToast";
 
 const Cart = ({ isOpen, onClose }: CartProps) => {
   const { handleRemoveItem, cartItems } = useCart();
+  const { showToast, handleCloseToast, handleButtonClick } = useToast();
 
   if (!isOpen) return null;
   return (
@@ -36,7 +39,13 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
                 <span>R$ {item?.price}</span>
                 <span>{item?.qtdAddedToCart}</span>
                 <span>
-                  <Trash size={16} onClick={() => handleRemoveItem(item)} />
+                  <Trash
+                    size={16}
+                    onClick={() => {
+                      handleRemoveItem(item);
+                      handleButtonClick();
+                    }}
+                  />
                 </span>
               </li>
             ))
@@ -63,6 +72,13 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
         </TotalCart>
         <button>Finalizar compra</button>
       </CartContent>
+      {showToast && (
+        <Toast
+          typeOfToast="success"
+          message="Produto removido do carrinho"
+          onClose={handleCloseToast}
+        />
+      )}
     </CartContainer>
   );
 };
