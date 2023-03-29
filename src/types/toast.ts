@@ -1,5 +1,6 @@
 export interface ToastProps {
-  title: string;
-  message?: string;
+  message: string;
   duration?: number;
+  typeOfToast?: "success" | "error";
+  onClose: () => void;
 }
