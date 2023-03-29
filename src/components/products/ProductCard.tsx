@@ -1,5 +1,6 @@
 import { useModal } from "../../hooks/layout/useModal";
 import useQuantity from "../../hooks/layout/useQuantity";
+import useToast from "../../hooks/useToast";
 import { addItemToCart, store } from "../../store/cartState";
 import { QuantityContainer } from "../../styles/layout/quantity";
 import {
@@ -9,6 +10,7 @@ import {
 } from "../../styles/products/productCard";
 import { ProductCardProps } from "../../types/productCardProps";
 import Modal from "../layout/Modal";
+import Toast from "../Toast";
 import ProductExpandedModal from "./ProductExpandedModal";
 
 const ProductCard = ({
@@ -20,6 +22,7 @@ const ProductCard = ({
 }: ProductCardProps) => {
   const { handleModalClose, isModalOpen, setIsModalOpen } = useModal();
   const { handleIncrement, handleDecrement, quantity } = useQuantity();
+  const { showToast, handleButtonClick, handleCloseToast } = useToast();
 
   return (
     <>
@@ -39,11 +42,12 @@ const ProductCard = ({
             <button onClick={handleDecrement}>-</button>
           </QuantityContainer>
           <CardButton
-            onClick={() =>
+            onClick={() => {
               store.dispatch(
                 addItemToCart({ ...product, qtdAddedToCart: quantity })
-              )
-            }
+              );
+              handleButtonClick();
+            }}
           >
             Comprar
           </CardButton>
@@ -52,6 +56,13 @@ const ProductCard = ({
       <Modal isOpen={isModalOpen} onClose={handleModalClose}>
         <ProductExpandedModal product={product} />
       </Modal>
+      {showToast && (
+        <Toast
+          typeOfToast="success"
+          message="Produto adicionado ao carrinho!"
+          onClose={handleCloseToast}
+        />
+      )}
     </>
   );
 };
