@@ -5,7 +5,7 @@ export const ToastContainer = styled.div`
   bottom: 16px;
   right: 16px;
   max-width: 320px;
-  padding: 16px;
+  padding: 0.9rem !important;
   background-color: #333;
   color: #fff;
   border-radius: 4px;
@@ -13,6 +13,7 @@ export const ToastContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 3rem;
   z-index: 9999;
 `;
 
