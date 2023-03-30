@@ -49,28 +49,13 @@ export const ProducerItems = styled.div`
 
   table {
     width: 100%;
-  }
-  thead {
-    display: flex;
-    flex-direction: row;
 
-    tr {
-      margin-top: 1rem;
-      width: 100%;
+    thead {
       th {
         display: flex;
         justify-content: space-between;
         border-bottom: 1px solid #a1a2a6;
         padding: 1rem;
-        width: 100%;
-
-        svg {
-          cursor: pointer;
-          color: #f2ae30;
-          &:hover {
-            color: #f5c46b;
-          }
-        }
 
         span {
           width: 10%;
@@ -78,43 +63,43 @@ export const ProducerItems = styled.div`
         }
       }
     }
-  }
 
-  tbody {
-    display: flex;
-
-    tr {
-      margin-top: 1rem;
-      width: 100%;
-      th {
-        display: flex;
-        justify-content: space-between;
-        border-bottom: 1px solid #a1a2a6;
-        padding: 1rem;
+    tbody {
+      tr {
         width: 100%;
 
-        svg {
-          cursor: pointer;
-          color: #f2ae30;
-          &:hover {
-            color: #f5c46b;
-          }
-        }
+        th {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid #a1a2a6;
+          padding: 1rem;
 
-        span {
-          width: 20%;
-          text-align: left;
           svg {
-            color: #bd2a2e;
+            cursor: pointer;
+            color: #f2ae30;
             &:hover {
-              color: #bd4646;
+              color: #f5c46b;
             }
-            margin-left: 1rem;
           }
-        }
 
-        &:hover {
-          background-color: #203d3e;
+          span {
+            width: 20%;
+            text-align: left;
+
+            svg {
+              color: #bd2a2e;
+              margin-left: 1rem;
+
+              &:hover {
+                color: #bd4646;
+              }
+            }
+          }
+
+          &:hover {
+            background-color: #203d3e;
+          }
         }
       }
     }
