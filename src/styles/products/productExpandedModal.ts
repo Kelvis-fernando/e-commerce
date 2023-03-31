@@ -6,6 +6,7 @@ export const ProductExpandedModalContainer = styled.div`
 
   img {
     width: 20rem;
+    height: 25rem;
   }
 `;
 
