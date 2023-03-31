@@ -32,9 +32,9 @@ export const ProducerService = () => {
         TypeToast: String(data?.typeRoast),
         Quantity: Number(data?.quantity),
       });
-      console.log(result);
+      return result;
     } catch (error) {
-      console.error(error);
+      return error;
     }
   };
 

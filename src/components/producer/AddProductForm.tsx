@@ -1,4 +1,3 @@
-// import axios from "axios";
 import useAddProductForm from "../../hooks/producer/useAddProductForm";
 import useToast from "../../hooks/useToast";
 import {
@@ -8,15 +7,20 @@ import {
 import Toast from "../Toast";
 
 const AddProductForm = () => {
-  const { handleCreateProduct } = useAddProductForm();
+  const { handleCreateProduct, showToastError, setShowToastError } =
+    useAddProductForm();
   const { showToast, handleCloseToast, handleButtonClick } = useToast();
 
   return (
     <>
       <AddProductFormContainer
         onSubmit={(event) => {
-          handleCreateProduct(event);
-          handleButtonClick();
+          handleCreateProduct(event).then((result: any) => {
+            if (result.request.status < 200 || result.request.status > 299) {
+              return setShowToastError(true);
+            }
+            return handleButtonClick();
+          });
         }}
       >
         <h1>Cadastre o produto</h1>
@@ -96,6 +100,13 @@ const AddProductForm = () => {
           typeOfToast="success"
           message="Produto criado com sucesso!"
           onClose={handleCloseToast}
+        />
+      )}
+      {showToastError && (
+        <Toast
+          typeOfToast="error"
+          message="Erro ao criar o produto!"
+          onClose={() => setShowToastError(false)}
         />
       )}
     </>
