@@ -9,8 +9,9 @@ export const ProductService = () => {
       try {
         const result = await axios.get("https://localhost:7041/v1/coffee");
         setResponse(result.data);
+        return result
       } catch (error) {
-        console.error(error);
+        return error
       }
     };
 

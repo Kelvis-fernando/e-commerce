@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { ProductCardProps } from "../types/productCardProps";
 
 export const ProducerService = () => {
   const [response, setResponse] = useState();
@@ -17,7 +18,7 @@ export const ProducerService = () => {
     fetchData();
   }, []);
 
-  const postData = async (data: any) => {
+  const postData = async (data: ProductCardProps) => {
     try {
       const result = await axios.post("https://localhost:7041/v1/coffee", {
         Name: String(data?.name),
@@ -29,7 +30,7 @@ export const ProducerService = () => {
         Itensity: String(data?.itensity),
         Notes: String(data?.notes),
         Origin: String(data?.origin),
-        TypeToast: String(data?.typeRoast),
+        TypeToast: String(data?.typeToast),
         Quantity: Number(data?.quantity),
       });
       return result;

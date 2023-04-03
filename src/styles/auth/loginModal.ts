@@ -10,6 +10,11 @@ export const AuthModalContainer = styled.div`
     font-size: 2rem;
   }
 
+  h2 {
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+
   h3 {
     font-size: 1.2rem;
     color: #a1a2a6;

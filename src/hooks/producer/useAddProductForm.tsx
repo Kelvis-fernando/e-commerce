@@ -1,15 +1,13 @@
 import { FormEvent, useState } from "react";
 import { ProducerService } from "../../services/producerService";
+import { getFormData } from "../../utils/getFormData";
 
 const useAddProductForm = () => {
   const { postData } = ProducerService();
-
   const [showToastError, setShowToastError] = useState(false);
 
   const handleCreateProduct = async (event: FormEvent) => {
-    event.preventDefault();
-    const formData = new FormData(event.target as HTMLFormElement);
-    const data = Object.fromEntries(formData);
+    const data = await getFormData(event);
     const result = await postData(data);
     return result;
   };

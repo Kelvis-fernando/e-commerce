@@ -1,7 +1,8 @@
 import { AuthModalContainer } from "../../styles/auth/loginModal";
+import { ForgotPasswordProps } from "../../types/auth";
 import TitleAndSubtitle from "../layout/TitleAndSubtitle";
 
-const ForgotPasswordModal = () => {
+const ForgotPasswordModal = ({ onBack }: ForgotPasswordProps) => {
   return (
     <AuthModalContainer>
       <TitleAndSubtitle
@@ -13,7 +14,13 @@ const ForgotPasswordModal = () => {
         <input type="email" name="email" id="email" />
         <button type="submit">Enviar</button>
       </form>
-      <h2>voltar</h2>
+      <h2
+        onClick={() => {
+          if (onBack) return onBack(false);
+        }}
+      >
+        Voltar
+      </h2>
     </AuthModalContainer>
   );
 };
