@@ -5,16 +5,16 @@ import { ProductCardProps } from "../types/productCardProps";
 export const ProducerService = () => {
   const [response, setResponse] = useState();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await axios.get("https://localhost:7041/v1/coffee");
-        setResponse(result.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  const fetchData = async () => {
+    try {
+      const result = await axios.get("https://localhost:7041/v1/coffee");
+      setResponse(result.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
+  useEffect(() => {
     fetchData();
   }, []);
 
@@ -74,5 +74,6 @@ export const ProducerService = () => {
     postData,
     deleteData,
     updateData,
+    fetchData,
   };
 };

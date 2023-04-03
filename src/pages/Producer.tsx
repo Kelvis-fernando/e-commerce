@@ -71,8 +71,8 @@ const Producer = () => {
                           <span>
                             <Trash
                               size={20}
-                              onClick={() => {
-                                deleteProduct(products.id ?? 0);
+                              onClick={async () => {
+                                await deleteProduct(products.id ?? 0);
                                 handleButtonClick();
                               }}
                             />
@@ -98,6 +98,7 @@ const Producer = () => {
       {showToast && (
         <Toast
           typeOfToast="success"
+          duration={1000}
           message="Produto deletado com sucesso!"
           onClose={handleCloseToast}
         />

@@ -106,6 +106,7 @@ const AddProductForm = () => {
         <Toast
           typeOfToast="error"
           message="Erro ao criar o produto!"
+          duration={1500}
           onClose={() => setShowToastError(false)}
         />
       )}

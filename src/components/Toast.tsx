@@ -21,6 +21,7 @@ const Toast: React.FC<ToastProps> = ({
         if (newProgress >= 100) {
           clearInterval(timer);
           onClose();
+          window.location.reload();
         }
         return newProgress;
       });
