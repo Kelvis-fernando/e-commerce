@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useModal } from "../../hooks/layout/useModal";
 import useQuantity from "../../hooks/layout/useQuantity";
 import useToast from "../../hooks/useToast";
@@ -24,11 +25,19 @@ const ProductCard = ({
   const { handleIncrement, handleDecrement, quantity } = useQuantity();
   const { showToast, handleButtonClick, handleCloseToast } = useToast();
 
+  const imageDefault =
+    "https://blog.nscsports.org/wp-content/uploads/2014/10/default-img.gif";
+  const [imageSrc, setImageSrc] = useState(image);
+
+  const handleImageError = () => {
+    setImageSrc(imageDefault);
+  };
+
   return (
     <>
       <ProductCardContainer>
         <div onClick={() => setIsModalOpen(true)}>
-          <img src={image} alt="product" />
+          <img src={imageSrc} alt="product" onError={handleImageError} />
           <h1>{name}</h1>
           <h2>
             <span>R$ {price}</span>
