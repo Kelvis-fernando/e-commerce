@@ -91,6 +91,10 @@ export const CartContent = styled.div`
       }
     }
   }
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
 `;
 
 export const TotalCart = styled.div`
