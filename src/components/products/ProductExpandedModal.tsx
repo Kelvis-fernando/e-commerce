@@ -8,9 +8,11 @@ import {
 } from "../../styles/products/productExpandedModal";
 import { ProductCardProps } from "../../types/productCardProps";
 import Toast from "../Toast";
+import { SetDefaultImage } from "../../utils/setDefaultImage";
 
 const ProductExpandedModal = ({ product }: ProductCardProps) => {
   const { showToast, handleCloseToast, handleButtonClick } = useToast();
+  const { imageSrc, handleImageError } = SetDefaultImage(product?.image ?? "");
 
   return (
     <ProductExpandedModalContainer>
@@ -64,7 +66,7 @@ const ProductExpandedModal = ({ product }: ProductCardProps) => {
           Adicionar ao carrinho
         </button>
       </CoffeInfo>
-      <img src={product?.image} alt="product" />
+      <img src={imageSrc} alt="product" onError={handleImageError} />
       {showToast && (
         <Toast
           typeOfToast="success"

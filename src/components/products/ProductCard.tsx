@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useModal } from "../../hooks/layout/useModal";
 import useQuantity from "../../hooks/layout/useQuantity";
 import useToast from "../../hooks/useToast";
@@ -13,6 +12,7 @@ import { ProductCardProps } from "../../types/productCardProps";
 import Modal from "../layout/Modal";
 import Toast from "../Toast";
 import ProductExpandedModal from "./ProductExpandedModal";
+import { SetDefaultImage } from "../../utils/setDefaultImage";
 
 const ProductCard = ({
   name,
@@ -24,14 +24,7 @@ const ProductCard = ({
   const { handleModalClose, isModalOpen, setIsModalOpen } = useModal();
   const { handleIncrement, handleDecrement, quantity } = useQuantity();
   const { showToast, handleButtonClick, handleCloseToast } = useToast();
-
-  const imageDefault =
-    "https://blog.nscsports.org/wp-content/uploads/2014/10/default-img.gif";
-  const [imageSrc, setImageSrc] = useState(image);
-
-  const handleImageError = () => {
-    setImageSrc(imageDefault);
-  };
+  const { imageSrc, handleImageError } = SetDefaultImage(image ?? '');
 
   return (
     <>
