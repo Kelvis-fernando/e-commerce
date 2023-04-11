@@ -8,11 +8,11 @@ import {
 } from "../../styles/products/productExpandedModal";
 import { ProductCardProps } from "../../types/productCardProps";
 import Toast from "../Toast";
-import { SetDefaultImage } from "../../utils/setDefaultImage";
+import { setDefaultImage } from "../../utils/setDefaultImage";
 
 const ProductExpandedModal = ({ product }: ProductCardProps) => {
   const { showToast, handleCloseToast, handleButtonClick } = useToast();
-  const { imageSrc, handleImageError } = SetDefaultImage(product?.image ?? "");
+  const { imageSrc, handleImageError } = setDefaultImage(product?.image ?? "");
 
   return (
     <ProductExpandedModalContainer>

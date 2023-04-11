@@ -12,7 +12,7 @@ import { ProductCardProps } from "../../types/productCardProps";
 import Modal from "../layout/Modal";
 import Toast from "../Toast";
 import ProductExpandedModal from "./ProductExpandedModal";
-import { SetDefaultImage } from "../../utils/setDefaultImage";
+import { setDefaultImage } from "../../utils/setDefaultImage";
 
 const ProductCard = ({
   name,
@@ -24,7 +24,7 @@ const ProductCard = ({
   const { handleModalClose, isModalOpen, setIsModalOpen } = useModal();
   const { handleIncrement, handleDecrement, quantity } = useQuantity();
   const { showToast, handleButtonClick, handleCloseToast } = useToast();
-  const { imageSrc, handleImageError } = SetDefaultImage(image ?? '');
+  const { imageSrc, handleImageError } = setDefaultImage(image ?? '');
 
   return (
     <>

@@ -1,8 +1,8 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useState } from "react";
+import imageDefault from "../assets/default-img.gif"
 
-export const SetDefaultImage = (image: string) => {
-  const imageDefault =
-    "https://blog.nscsports.org/wp-content/uploads/2014/10/default-img.gif";
+export const setDefaultImage = (image: string) => {
   const [imageSrc, setImageSrc] = useState(image);
 
   const handleImageError = () => {
