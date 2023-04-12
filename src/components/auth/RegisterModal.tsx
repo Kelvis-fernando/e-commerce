@@ -23,12 +23,17 @@ const RegisterModal = ({ onBack }: RegisterModalProps) => {
           <input required type="email" name="email" id="email" />
           <label htmlFor="password">Senha</label>
           <input required type="password" name="password" id="password" />
-          <label htmlFor="password2">Confirme a senha</label>
-          <input required type="password" name="password2" id="password2" />
-          <label htmlFor="userType">TIpo de usuario</label>
+          <label htmlFor="confirmPassword">Confirme a senha</label>
+          <input
+            required
+            type="password"
+            name="confirmPassword"
+            id="confirmPassword"
+          />
+          <label htmlFor="typeOfUser">Tipo de usuario</label>
           <select
-            name="userType"
-            id="userType"
+            name="typeOfUser"
+            id="typeOfUser"
             onChange={(event) => setTypeOfUser(event.target.value)}
           >
             <option value="user">Consumidor</option>
