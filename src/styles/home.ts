@@ -15,10 +15,28 @@ export const HomeContainer = styled.div`
     color: #b2bebf;
     font-weight: 400;
   }
+
   h2 {
     font-size: 2.5rem;
     color: #b2bebf;
     font-weight: 300;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    img {
+      height: 20rem;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+    }
   }
 `;
 
@@ -37,7 +55,7 @@ export const HomeWelcome = styled.div`
 
   p {
     margin-top: 1rem;
-    color: #B2BEBF;
+    color: #b2bebf;
     font-weight: 400;
   }
 
@@ -54,6 +72,22 @@ export const HomeWelcome = styled.div`
 
     &:hover {
       color: #555;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    a {
+      font-size: 0.8rem;
     }
   }
 `;

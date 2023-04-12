@@ -9,6 +9,7 @@ const Home = () => {
     <Main>
       <Navbar />
       <HomeContainer>
+        <img src={image} alt="capa" />
         <HomeWelcome>
           <h1>Vindo direto do campo</h1>
           <h1>E do seu produtor favorito</h1>
@@ -19,7 +20,6 @@ const Home = () => {
           </p>
           <Link to="/products">Veja os nossos produtos!</Link>
         </HomeWelcome>
-        <img src={image} alt="capa" />
       </HomeContainer>
     </Main>
   );

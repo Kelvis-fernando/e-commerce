@@ -11,6 +11,16 @@ export const ProducerContainer = styled.div`
     font-size: 2rem;
     font-weight: bold;
   }
+
+  @media (max-width: 768px) {
+    text-align: center;
+    margin-bottom: 1rem;
+    h1,
+    h2 {
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+  }
 `;
 
 export const ProducerActions = styled.div`
@@ -40,6 +50,10 @@ export const ProducerActions = styled.div`
     &:hover {
       color: #b2bebf;
     }
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
   }
 `;
 
@@ -99,6 +113,24 @@ export const ProducerItems = styled.div`
 
           &:hover {
             background-color: #203d3e;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 0rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    table {
+      thead {
+        th {
+          span {
+            width: 15%;
           }
         }
       }

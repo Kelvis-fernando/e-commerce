@@ -31,4 +31,24 @@ export const FilterBarContainer = styled.div`
     color: #fff;
     border-radius: 0.2rem;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+
+    input {
+      margin-top: 1rem;
+      margin-left: 0;
+      width: 100%;
+    }
+
+    select {
+      margin-top: 1rem;
+      margin-left: 0;
+      width: 100%;
+    }
+  }
 `;

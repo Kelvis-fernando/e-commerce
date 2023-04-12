@@ -9,6 +9,12 @@ export const Header = styled.header`
   color: #fff;
   justify-content: space-around;
   align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
 `;
 
 export const Logo = styled.div`
@@ -35,6 +41,7 @@ export const Links = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1rem;
 
   a {
     text-decoration: none;
@@ -55,16 +62,22 @@ export const Search = styled.div`
     border: none;
     border-radius: 0.2rem;
     height: 25px;
+    margin-top: 1rem;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 `;
 
 export const Login = styled.div`
   display: flex;
+  margin-top: 1rem;
 
   svg {
     cursor: pointer;
     &:hover {
-      color: #B2BEBF;
+      color: #b2bebe;
     }
   }
 
