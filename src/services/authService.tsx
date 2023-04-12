@@ -9,10 +9,8 @@ const authService = () => {
         "https://localhost:7064/api/v1/user/login",
         { Email: loginData.email, Password: loginData.password }
       );
-      console.log(result);
       return result;
     } catch (error) {
-      console.log(error);
       return error;
     }
   };
@@ -30,14 +28,23 @@ const authService = () => {
           typeOfUser: registerData.typeOfUser,
         }
       );
-      console.log(result);
       return result;
     } catch (error) {
-      console.log(error);
       return error;
     }
   };
-  const forgotPasswordRequest = () => {};
+  const forgotPasswordRequest = async (email: {
+    [k: string]: FormDataEntryValue;
+  }) => {
+    try {
+      const result = await axios.post(
+        `https://localhost:7064/api/v1/user/forgot-password?email=${email.email}`
+      );
+      return result;
+    } catch (error) {
+      return error;
+    }
+  };
 
   return { loginRequest, registerRequest, forgotPasswordRequest };
 };

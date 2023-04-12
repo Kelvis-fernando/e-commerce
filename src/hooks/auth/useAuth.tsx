@@ -8,7 +8,8 @@ const useAuth = () => {
     type: string
   ) => {
     const formData = await getFormData(event);
-    const { loginRequest, registerRequest } = authService();
+    const { loginRequest, registerRequest, forgotPasswordRequest } =
+      authService();
 
     switch (type) {
       case "login":
@@ -28,7 +29,12 @@ const useAuth = () => {
         });
         break;
       case "forgot":
-        console.log(formData, "forgot");
+        forgotPasswordRequest(formData).then((result: any) => {
+          if (result.code) {
+            return console.log(result.response.data);
+          }
+          return console.log(result.data);
+        });
         break;
     }
   };
