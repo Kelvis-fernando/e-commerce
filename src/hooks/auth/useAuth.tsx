@@ -1,8 +1,12 @@
-import { FormEvent } from "react";
+/* eslint-disable react-hooks/rules-of-hooks */
+import { Dispatch, FormEvent, SetStateAction } from "react";
 import { getFormData } from "../../utils/getFormData";
 import authService from "../../services/authService";
 
-const useAuth = () => {
+const useAuth = (
+  handleButtonClick?: Dispatch<SetStateAction<boolean>>,
+  setErrorToast?: Dispatch<SetStateAction<boolean>>
+) => {
   const handleGetAuthFormData = async (
     event: FormEvent<Element>,
     type: string
@@ -14,10 +18,12 @@ const useAuth = () => {
     switch (type) {
       case "login":
         loginRequest(formData).then((result: any) => {
-          if (result.code) {
-            return console.log(result.response.data);
+          if (result.code && setErrorToast !== undefined) {
+            setErrorToast(true);
+            return;
           }
-          return console.log(result.data);
+          handleButtonClick !== undefined && handleButtonClick(true);
+          return;
         });
         break;
       case "register":
