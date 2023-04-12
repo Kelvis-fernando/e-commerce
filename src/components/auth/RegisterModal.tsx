@@ -3,10 +3,11 @@ import { RegisterModalContainer } from "../../styles/auth/registerModal";
 import TitleAndSubtitle from "../layout/TitleAndSubtitle";
 import useRegisterModal from "../../hooks/auth/useRegisterModal";
 import { RegisterModalProps } from "../../types/auth";
+import useAuth from "../../hooks/auth/useAuth";
 
 const RegisterModal = ({ onBack }: RegisterModalProps) => {
-  const { typeOfUser, setTypeOfUser, handleSubmitRegister } =
-    useRegisterModal();
+  const { typeOfUser, setTypeOfUser } = useRegisterModal();
+  const { handleGetAuthFormData } = useAuth();
 
   return (
     <AuthModalContainer>
@@ -15,7 +16,7 @@ const RegisterModal = ({ onBack }: RegisterModalProps) => {
         subtitle="Adicione os seus dados."
       />
       <RegisterModalContainer>
-        <form onSubmit={handleSubmitRegister}>
+        <form onSubmit={(event) => handleGetAuthFormData(event, "register")}>
           <label htmlFor="name">Nome</label>
           <input required type="text" name="name" id="name" />
           <label htmlFor="email">E-mail</label>

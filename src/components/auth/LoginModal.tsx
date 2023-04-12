@@ -4,6 +4,7 @@ import Modal from "../layout/Modal";
 import RegisterModal from "./RegisterModal";
 import ForgotPasswordModal from "./ForgotPasswordModal";
 import useLoginModal from "../../hooks/auth/useLoginModal";
+import useAuth from "../../hooks/auth/useAuth";
 
 const LoginModal = () => {
   const {
@@ -12,6 +13,7 @@ const LoginModal = () => {
     forgotPasswordModalOPen,
     setForgotPasswordModalOPen,
   } = useLoginModal();
+  const { handleGetAuthFormData } = useAuth();
 
   return (
     <AuthModalContainer>
@@ -19,7 +21,7 @@ const LoginModal = () => {
         title="Olá, seja bem vindo"
         subtitle="Entre na sua conta"
       />
-      <form>
+      <form onSubmit={(event) => handleGetAuthFormData(event, "login")}>
         <label htmlFor="email">E-mail</label>
         <input type="email" name="email" id="email" />
         <label htmlFor="password">Senha</label>
