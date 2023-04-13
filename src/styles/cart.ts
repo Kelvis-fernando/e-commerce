@@ -91,9 +91,16 @@ export const CartContent = styled.div`
       }
     }
   }
+
   ::-webkit-scrollbar {
     width: 0;
     height: 0;
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    top: 48%;
+    right: -40%;
   }
 `;
 
