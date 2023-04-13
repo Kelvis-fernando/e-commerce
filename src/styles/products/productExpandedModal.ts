@@ -8,6 +8,14 @@ export const ProductExpandedModalContainer = styled.div`
     width: 20rem;
     height: 25rem;
   }
+
+  @media (max-width: 768px) {
+    width: 70%;
+    height: 50rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const CoffeInfo = styled.div`
@@ -43,6 +51,10 @@ export const CoffeInfo = styled.div`
     &:hover {
       background-color: #0d4a3a;
     }
+  }
+
+  @media (max-width: 768px) {
+    width: 15rem;
   }
 `;
 

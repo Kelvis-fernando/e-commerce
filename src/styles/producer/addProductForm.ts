@@ -47,6 +47,12 @@ export const AddProductFormContainer = styled.form`
       background-color: #0d4a3a;
     }
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 40rem;
+    overflow-y: scroll;
+  }
 `;
 
 export const InputStyles = styled.div`
@@ -54,5 +60,10 @@ export const InputStyles = styled.div`
 
   div {
     margin: 0.3rem 0.3rem;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
   }
 `;
