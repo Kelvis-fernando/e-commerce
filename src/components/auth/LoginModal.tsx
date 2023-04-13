@@ -18,10 +18,7 @@ const LoginModal = () => {
   } = useLoginModal();
   const { showToast, handleButtonClick, handleCloseToast } = useToast();
   const [errorToast, setErrorToast] = useState(false);
-  const { handleGetAuthFormData } = useAuth(
-    handleButtonClick,
-    setErrorToast
-  );
+  const { handleGetAuthFormData } = useAuth(handleButtonClick, setErrorToast);
 
   return (
     <>
@@ -43,19 +40,19 @@ const LoginModal = () => {
             Esqueceu a senha?
           </h2>
         </span>
-        <Modal
-          isOpen={registerModalOPen}
-          onClose={() => setRegisterModalOPen(false)}
-        >
-          <RegisterModal onBack={setRegisterModalOPen} />
-        </Modal>
-        <Modal
-          isOpen={forgotPasswordModalOPen}
-          onClose={() => setForgotPasswordModalOPen(false)}
-        >
-          <ForgotPasswordModal onBack={setForgotPasswordModalOPen} />
-        </Modal>
       </AuthModalContainer>
+      <Modal
+        isOpen={registerModalOPen}
+        onClose={() => setRegisterModalOPen(false)}
+      >
+        <RegisterModal onBack={setRegisterModalOPen} />
+      </Modal>
+      <Modal
+        isOpen={forgotPasswordModalOPen}
+        onClose={() => setForgotPasswordModalOPen(false)}
+      >
+        <ForgotPasswordModal onBack={setForgotPasswordModalOPen} />
+      </Modal>
       {showToast && (
         <Toast
           message={"Login feito com sucesso!"}

@@ -36,10 +36,12 @@ const useAuth = (
         break;
       case "forgot":
         forgotPasswordRequest(formData).then((result: any) => {
-          if (result.code) {
-            return console.log(result.response.data);
+          if (result.code && setErrorToast !== undefined) {
+            setErrorToast(true);
+            return;
           }
-          return console.log(result.data);
+          handleButtonClick !== undefined && handleButtonClick(true);
+          return;
         });
         break;
     }
