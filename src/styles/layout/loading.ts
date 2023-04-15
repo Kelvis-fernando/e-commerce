@@ -9,6 +9,7 @@ export const LoadingContainer = styled.div`
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
+  color: #fff;
 `;
 
 const rotateAnimation = keyframes`
