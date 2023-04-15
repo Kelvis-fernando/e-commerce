@@ -13,6 +13,7 @@ import useProducer from "../hooks/producer/useProducer";
 import { EditProductModal } from "../components/producer/EditProductForm";
 import useToast from "../hooks/useToast";
 import Toast from "../components/Toast";
+import Loading from "../components/layout/Loading";
 
 const Producer = () => {
   const { isModalOpen, setIsModalOpen, handleModalClose } = useModal();
@@ -53,7 +54,7 @@ const Producer = () => {
               </thead>
               <tbody>
                 <tr>
-                  {productsRegistered &&
+                  {productsRegistered !== undefined ? (
                     productsRegistered?.map((products) => (
                       <th key={products?.id}>
                         <span>{products?.name}</span>
@@ -79,7 +80,10 @@ const Producer = () => {
                           </span>
                         </div>
                       </th>
-                    ))}
+                    ))
+                  ) : (
+                    <Loading />
+                  )}
                 </tr>
               </tbody>
             </table>

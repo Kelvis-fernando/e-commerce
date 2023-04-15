@@ -27,6 +27,9 @@ export const LoadingContent = styled.div`
   align-items: center;
   height: 100%;
 
+  h1 {
+    font-size: 1.3rem;
+  }
   svg {
     animation: ${rotateAnimation} 1s linear infinite;
     margin-right: 0.5rem;
