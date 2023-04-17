@@ -1,5 +1,5 @@
 import { Header, Logo, Links, Login } from "../../styles/layout/navbar";
-import { ShoppingCart, Coffee } from "phosphor-react";
+import { ShoppingCart, Coffee, Bell } from "phosphor-react";
 import { useModal } from "../../hooks/layout/useModal";
 import { Link } from "react-router-dom";
 import Modal from "./Modal";
@@ -12,11 +12,14 @@ import Badge from "./Badge";
 import Avatar from "../Avatar";
 import ResetPassword from "../auth/ResetPassword";
 import useLoginModal from "../../hooks/auth/useLoginModal";
+import Dropdown from "../Dropdown";
+import { useState } from "react";
 
 const Navbar = () => {
   const { setIsModalOpen, isModalOpen, handleModalClose } = useModal();
   const { isCartOpen, setIsCartOpen, handleCloseCart, cartItems } = useCart();
   const { resetPasswordModalOPen } = useLoginModal();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
     <Header>
@@ -37,6 +40,23 @@ const Navbar = () => {
         ) : (
           <Avatar name="Kelvis Delapena" />
         )}
+        <Badge items={2}>
+          <>
+            <Bell
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              size={30}
+            />
+            <Dropdown isOpen={isDropdownOpen}>
+              <h1>Pedidos</h1>
+              <ul>
+                <li>Item coffee 1</li>
+                <li>Item coffee 2</li>
+                <li>Item coffee 3</li>
+                <li>Item coffee 4</li>
+              </ul>
+            </Dropdown>
+          </>
+        </Badge>
         <Badge items={cartItems.length}>
           <ShoppingCart onClick={() => setIsCartOpen(true)} size={30} />
         </Badge>
