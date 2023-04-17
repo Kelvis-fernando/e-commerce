@@ -10,10 +10,13 @@ import ForgotPasswordModal from "../auth/ForgotPasswordModal";
 import RegisterModal from "../auth/RegisterModal";
 import Badge from "./Badge";
 import Avatar from "../Avatar";
+import ResetPassword from "../auth/ResetPassword";
+import useLoginModal from "../../hooks/auth/useLoginModal";
 
 const Navbar = () => {
   const { setIsModalOpen, isModalOpen, handleModalClose } = useModal();
   const { isCartOpen, setIsCartOpen, handleCloseCart, cartItems } = useCart();
+  const { resetPasswordModalOPen } = useLoginModal();
 
   return (
     <Header>
@@ -43,6 +46,9 @@ const Navbar = () => {
       </Modal>
       <Modal isOpen={false} onClose={handleModalClose}>
         <ForgotPasswordModal />
+      </Modal>
+      <Modal isOpen={resetPasswordModalOPen} onClose={handleModalClose}>
+        <ResetPassword />
       </Modal>
       <Modal isOpen={false} onClose={handleModalClose}>
         <RegisterModal />

@@ -5,11 +5,13 @@ import { AuthModalContainer } from "../../styles/auth/loginModal";
 import { ForgotPasswordProps } from "../../types/auth";
 import Toast from "../Toast";
 import TitleAndSubtitle from "../layout/TitleAndSubtitle";
+import useLoginModal from "../../hooks/auth/useLoginModal";
 
 const ForgotPasswordModal = ({ onBack }: ForgotPasswordProps) => {
   const { showToast, handleButtonClick, handleCloseToast } = useToast();
   const [errorToast, setErrorToast] = useState(false);
   const { handleGetAuthFormData } = useAuth(handleButtonClick, setErrorToast);
+  const { setResetPasswordModalOPen } = useLoginModal();
 
   return (
     <>
@@ -21,7 +23,9 @@ const ForgotPasswordModal = ({ onBack }: ForgotPasswordProps) => {
         <form onSubmit={(event) => handleGetAuthFormData(event, "forgot")}>
           <label htmlFor="email">E-mail</label>
           <input type="email" name="email" id="email" />
-          <button type="submit">Enviar</button>
+          <button onClick={() => setResetPasswordModalOPen(true)} type="submit">
+            Enviar
+          </button>
         </form>
         <h2
           onClick={() => {

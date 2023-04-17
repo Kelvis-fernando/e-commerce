@@ -26,7 +26,7 @@ const useCart = () => {
     isCartOpen,
     setIsCartOpen,
     handleCloseCart,
-    handleRemoveItem,
+    handleRemoveItem
   };
 };
 

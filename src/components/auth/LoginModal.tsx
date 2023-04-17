@@ -49,7 +49,9 @@ const LoginModal = () => {
       </Modal>
       <Modal
         isOpen={forgotPasswordModalOPen}
-        onClose={() => setForgotPasswordModalOPen(false)}
+        onClose={() => {
+          setForgotPasswordModalOPen(false);
+        }}
       >
         <ForgotPasswordModal onBack={setForgotPasswordModalOPen} />
       </Modal>
