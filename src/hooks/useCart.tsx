@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { removeItemFromCart, store } from "../store/cartState";
 import { ProductCardProps } from "../types/productCardProps";
 import cartService from "../services/cartService";
-import { OrderItems } from "../types/orderItems";
 
 const useCart = () => {
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
@@ -26,19 +25,7 @@ const useCart = () => {
   };
 
   const finishProductsRequest = (cartItems: ProductCardProps[]) => {
-    let orderItems: OrderItems = {
-      products: [],
-      prices: [],
-      qtdAddedToCart: [],
-    };
-
-    cartItems.map((items) => {
-      orderItems.products.push(items.name ?? "");
-      orderItems.prices.push(items.price ?? "");
-      orderItems.qtdAddedToCart.push(items.qtdAddedToCart ?? 0);
-    });
-
-    saveUserItemRequest(orderItems);
+    saveUserItemRequest(cartItems);
     setFinishRequestItemsToast(true);
   };
 
