@@ -14,6 +14,7 @@ import ResetPassword from "../auth/ResetPassword";
 import useLoginModal from "../../hooks/auth/useLoginModal";
 import Dropdown from "../Dropdown";
 import { useState } from "react";
+import OrderDropdown from "../OrderDropdown";
 
 const Navbar = () => {
   const { setIsModalOpen, isModalOpen, handleModalClose } = useModal();
@@ -40,20 +41,14 @@ const Navbar = () => {
         ) : (
           <Avatar name="Kelvis Delapena" />
         )}
-        <Badge items={2}>
+        <Badge items={0}>
           <>
             <Bell
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               size={30}
             />
             <Dropdown isOpen={isDropdownOpen}>
-              <h1>Pedidos</h1>
-              <ul>
-                <li>Item coffee 1</li>
-                <li>Item coffee 2</li>
-                <li>Item coffee 3</li>
-                <li>Item coffee 4</li>
-              </ul>
+              <OrderDropdown />
             </Dropdown>
           </>
         </Badge>

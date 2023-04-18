@@ -12,8 +12,10 @@ export const DropdownContainer = styled.div<{ isOpen: boolean }>`
   border-radius: 0.3rem;
   width: 8rem;
   margin-top: 0.5rem;
+  z-index: 9999;
 
   h1 {
+    margin-top: 0.7rem;
     text-align: center;
   }
 
