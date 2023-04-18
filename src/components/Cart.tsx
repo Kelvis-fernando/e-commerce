@@ -12,7 +12,13 @@ import Toast from "./Toast";
 import useToast from "../hooks/useToast";
 
 const Cart = ({ isOpen, onClose }: CartProps) => {
-  const { handleRemoveItem, cartItems } = useCart();
+  const {
+    handleRemoveItem,
+    cartItems,
+    finishProductsRequest,
+    finishRequestItemsToast,
+    setFinishRequestItemsToast,
+  } = useCart();
   const { showToast, handleCloseToast, handleButtonClick } = useToast();
 
   if (!isOpen) return null;
@@ -70,13 +76,22 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
               .toFixed(2)}
           </p>
         </TotalCart>
-        <button>Finalizar compra</button>
+        <button onClick={() => finishProductsRequest(cartItems)}>
+          Finalizar compra
+        </button>
       </CartContent>
       {showToast && (
         <Toast
           typeOfToast="success"
           message="Produto removido do carrinho"
           onClose={handleCloseToast}
+        />
+      )}
+      {finishRequestItemsToast && (
+        <Toast
+          typeOfToast="success"
+          message="Pedido enviado com sucesso"
+          onClose={() => setFinishRequestItemsToast(false)}
         />
       )}
     </CartContainer>
