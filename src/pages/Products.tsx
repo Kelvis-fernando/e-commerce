@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Loading from "../components/layout/Loading";
 import Navbar from "../components/layout/Navbar";
 import ProductCard from "../components/products/ProductCard";
@@ -8,7 +9,7 @@ import { ProductsContainer } from "../styles/products/products";
 import { ProductCardProps } from "../types/productCardProps";
 
 const Products = () => {
-  const { products } = UseProducts();
+  const { setSearchTerm, filteredProducts } = UseProducts();
 
   return (
     <Main>
@@ -24,11 +25,15 @@ const Products = () => {
           <option value="">Menor Preço</option>
           <option value="">Data Adicionada</option>
         </select>
-        <input type="text" placeholder="Procure um produto" />
+        <input
+          type="text"
+          placeholder="Procure um produto"
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </FilterBarContainer>
       <ProductsContainer>
-        {products !== undefined ? (
-          products?.map((product: ProductCardProps) => (
+        {filteredProducts !== undefined ? (
+          filteredProducts?.map((product: ProductCardProps) => (
             <ProductCard
               key={product.id}
               id={product?.id}

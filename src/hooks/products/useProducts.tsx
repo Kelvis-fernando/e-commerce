@@ -3,12 +3,19 @@ import { ProductService } from "../../services/productsService";
 import { ProductCardProps } from "../../types/productCardProps";
 
 export const UseProducts = () => {
-  const [products, setProducts] = useState<ProductCardProps[]>();
   const { response } = ProductService();
+  const [products, setProducts] = useState<ProductCardProps[]>();
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredProducts = products?.filter((product: ProductCardProps) => {
+    if (product.name !== undefined) {
+      return product.name.toLowerCase().includes(searchTerm.toLowerCase());
+    }
+  });
 
   useEffect(() => {
     setProducts(response);
   }, [response]);
 
-  return { products };
+  return { products, searchTerm, setSearchTerm, filteredProducts };
 };
