@@ -11,7 +11,7 @@ interface EditProductModalProps {
   product?: ProductCardProps;
 }
 
-export const EditProductModal = ({ product }: EditProductModalProps) => {
+const EditProductModal = ({ product }: EditProductModalProps) => {
   const { handleEditProduct } = useEditProductModal();
   const { showToast, handleCloseToast, handleButtonClick } = useToast();
 
@@ -155,3 +155,5 @@ export const EditProductModal = ({ product }: EditProductModalProps) => {
     </>
   );
 };
+
+export default EditProductModal;

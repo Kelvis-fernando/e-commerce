@@ -10,7 +10,7 @@ import {
 import { Pencil, Plus, Trash } from "phosphor-react";
 import AddProductForm from "../components/producer/AddProductForm";
 import useProducer from "../hooks/producer/useProducer";
-import { EditProductModal } from "../components/producer/EditProductForm";
+import EditProductModal from "../components/producer/EditProductForm";
 import useToast from "../hooks/useToast";
 import Toast from "../components/Toast";
 import Loading from "../components/layout/Loading";
