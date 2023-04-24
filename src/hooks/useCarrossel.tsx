@@ -2,7 +2,6 @@ import { useState } from "react";
 
 export const useCarrossel = (images: string[]) => {
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
-  console.log(images)
 
   const handlePrevClick = () => {
     setCurrentImageIndex(

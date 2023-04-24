@@ -41,10 +41,7 @@ export const ProducerService = () => {
 
   const deleteData = async (id: number) => {
     try {
-      const result = await axios.delete(
-        `https://localhost:7041/v1/coffee/${id}`
-      );
-      console.log(result, "deletado com sucesso");
+      await axios.delete(`https://localhost:7041/v1/coffee/${id}`);
     } catch (error) {}
   };
 
@@ -63,7 +60,6 @@ export const ProducerService = () => {
         TypeToast: String(product?.typeToast),
         Quantity: Number(product?.quantity),
       });
-      console.log(result);
     } catch (error) {
       console.error(error);
     }

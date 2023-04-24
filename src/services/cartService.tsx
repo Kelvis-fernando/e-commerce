@@ -8,7 +8,6 @@ const cartService = () => {
         " https://localhost:7041/v1/requestItems/save-request",
         itemsRequest
       );
-      console.log(itemsRequest, "service");
     } catch (error) {
       console.log(error);
     }

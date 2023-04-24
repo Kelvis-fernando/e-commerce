@@ -12,8 +12,6 @@ export const useEditProductModal = () => {
     if (id !== undefined) {
       return await updateData(data, id);
     }
-
-    return console.log(data, "id undefined");
   };
 
   return {
