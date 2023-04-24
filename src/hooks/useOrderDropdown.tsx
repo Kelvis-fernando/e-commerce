@@ -8,7 +8,7 @@ const useOrderDropdown = () => {
 
   useEffect(() => {
     getOrders().then((result) => setOrders(result.data));
-  }, [getOrders]);
+  }, []);
   return { orders };
 };
 
