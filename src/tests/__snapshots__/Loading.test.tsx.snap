@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading should render and match snapshot 1`] = `
+<div>
+  <div
+    class="sc-bcXHqe dVEnEb"
+  >
+    <div
+      class="sc-gswNZR eUScaB"
+    >
+      <svg
+        fill="currentColor"
+        height="25"
+        viewBox="0 0 256 256"
+        width="25"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="none"
+          height="256"
+          width="256"
+        />
+        <path
+          d="M168,40.7a96,96,0,1,1-80,0"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+        />
+      </svg>
+      <h1>
+        Carregando...
+      </h1>
+    </div>
+  </div>
+</div>
+`;

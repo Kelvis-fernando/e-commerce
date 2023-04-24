@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quantity should render and match snapshot 1`] = `
+<div>
+  <div
+    class="sc-bcXHqe hHqvzg"
+  >
+    <button>
+      +
+    </button>
+    <div>
+      quantity
+    </div>
+    <button>
+      -
+    </button>
+  </div>
+</div>
+`;

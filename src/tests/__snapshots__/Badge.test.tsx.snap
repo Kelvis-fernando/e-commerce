@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge should render and match snapshot 1`] = `
+<div>
+  <div
+    class="sc-bcXHqe gIKsQF"
+  >
+    <p>
+      test
+    </p>
+  </div>
+</div>
+`;
