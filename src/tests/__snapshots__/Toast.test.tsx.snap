@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toast should render and match snapshot 1`] = `
+<div>
+  <div
+    class="sc-bcXHqe earMgI"
+  >
+    <svg
+      fill="currentColor"
+      height="32"
+      style="color: rgb(45, 87, 49);"
+      viewBox="0 0 256 256"
+      width="32"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        fill="none"
+        height="256"
+        width="256"
+      />
+      <polyline
+        fill="none"
+        points="172 104 113.3 160 84 132"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+      />
+      <circle
+        cx="128"
+        cy="128"
+        fill="none"
+        r="96"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+      />
+    </svg>
+    <span />
+    <div
+      class="sc-dkrFOg eJClsy"
+      style="width: 0%;"
+    />
+    <button
+      class="sc-gswNZR hQuefH"
+    >
+      <svg
+        fill="currentColor"
+        height="20"
+        viewBox="0 0 256 256"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="none"
+          height="256"
+          width="256"
+        />
+        <line
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="200"
+          x2="56"
+          y1="56"
+          y2="200"
+        />
+        <line
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="200"
+          x2="56"
+          y1="200"
+          y2="56"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
